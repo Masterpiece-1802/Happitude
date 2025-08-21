@@ -1,0 +1,489 @@
+/* Yoga Page Styles */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@400;700&display=swap');
+
+:root {
+    --primary: #4361ee;
+    --secondary: #f72585;
+    --accent: #4cc9f0;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --success: #38b000;
+    --warning: #ff9e00;
+    --purple: #7209b7;
+    --yoga-green: #38b000;
+    --yoga-teal: #4895ef;
+}
+
+body {
+    font-family: 'Comic Neue', cursive;
+    background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Navbar spacing */
+.navbar {
+    margin-bottom: 0;
+}
+
+/* Tabs Container */
+.tabs-container {
+    background: linear-gradient(90deg, var(--yoga-teal), var(--yoga-green));
+    padding: 1.5rem 0;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Activity Tabs */
+.activity-tabs {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.activity-tabs ul {
+    border: none;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.activity-tabs li {
+    margin: 0 0.5rem;
+}
+
+.activity-tabs li a {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.2rem;
+    color: white !important;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    padding: 0.75rem 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    border: 2px solid transparent;
+}
+
+.activity-tabs li.is-active a {
+    background-color: white;
+    color: var(--yoga-green) !important;
+    border-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.activity-tabs li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Main Title */
+.main-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: 3.5rem;
+    color: var(--yoga-green);
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(45deg, var(--yoga-teal), var(--yoga-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.main-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 10%;
+    width: 80%;
+    height: 5px;
+    background: linear-gradient(90deg, transparent, var(--yoga-green), transparent);
+    border-radius: 10px;
+}
+
+/* Subtitle */
+.subtitle-container {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.yoga-description {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+    text-align: center;
+    font-weight: 500;
+}
+
+.yoga-description::before, .yoga-description::after {
+    content: "";
+    font-family: 'Fredoka One', cursive;
+    font-size: 4rem;
+    color: var(--yoga-teal);
+    position: absolute;
+    opacity: 0.3;
+}
+
+.yoga-description::before {
+    top: -20px;
+    left: 20px;
+}
+
+.yoga-description::after {
+    content: "";
+    bottom: -40px;
+    right: 20px;
+    transform: rotate(180deg);
+}
+
+/* Yoga Sessions */
+.yoga-sessions {
+    margin: 4rem 0;
+}
+
+.category-title {
+    font-family: 'Fredoka One', cursive;
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--yoga-green);
+    margin-bottom: 2.5rem;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.category-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 10%;
+    width: 80%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--yoga-teal), transparent);
+    border-radius: 10px;
+}
+
+/* Yoga Cards */
+.yoga-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    margin-bottom: 2rem;
+    height: 100%;
+}
+
+.yoga-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.session-image {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+}
+
+.session-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.yoga-card:hover .session-image img {
+    transform: scale(1.05);
+}
+
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.yoga-card:hover .play-overlay {
+    opacity: 1;
+}
+
+.play-overlay i {
+    font-size: 4rem;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.session-content {
+    padding: 1.5rem;
+}
+
+.session-content h3 {
+    font-family: 'Fredoka One', cursive;
+    color: var(--yoga-green);
+    margin-bottom: 0.8rem;
+    font-size: 1.5rem;
+}
+
+.session-content p {
+    color: #555;
+    margin-bottom: 1.2rem;
+    line-height: 1.5;
+}
+
+.session-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.session-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.session-button {
+    font-family: 'Fredoka One', cursive;
+    background: linear-gradient(45deg, var(--yoga-teal), var(--yoga-green));
+    border: none;
+    border-radius: 50px;
+    padding: 0.8rem 1.8rem;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(72, 149, 239, 0.4);
+    width: 100%;
+}
+
+.session-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(72, 149, 239, 0.5);
+}
+
+/* Modal */
+.yoga-modal {
+    display: none;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 800px;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* Benefits Section */
+.benefits-section {
+    margin: 5rem 0;
+    padding: 3rem 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(240, 255, 244, 0.8));
+    border-radius: 25px;
+}
+
+.benefit-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.benefit-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.benefit-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, var(--yoga-teal), var(--yoga-green));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 2rem;
+    color: white;
+}
+
+.benefit-card h3 {
+    font-family: 'Fredoka One', cursive;
+    color: var(--yoga-green);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.benefit-card p {
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Yoga Poses Section */
+.poses-section {
+    margin: 5rem 0;
+}
+
+.poses-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.pose-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.pose-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.pose-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.pose-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.pose-card:hover .pose-image img {
+    transform: scale(1.05);
+}
+
+.pose-content {
+    padding: 1.5rem;
+}
+
+.pose-content h3 {
+    font-family: 'Fredoka One', cursive;
+    color: var(--yoga-green);
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+}
+
+.pose-content p {
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Floating elements for calming effect */
+.floating-shape {
+    position: fixed;
+    z-index: -1;
+    border-radius: 50%;
+    background: rgba(56, 176, 0, 0.1);
+    animation: floatYoga 25s infinite ease-in-out;
+}
+
+@keyframes floatYoga {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1024px) {
+    .main-title {
+        font-size: 3rem;
+    }
+    
+    .activity-tabs li a {
+        font-size: 1.1rem;
+        padding: 0.6rem 1.2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .activity-tabs ul {
+        flex-wrap: wrap;
+    }
+    
+    .activity-tabs li {
+        margin-bottom: 0.8rem;
+    }
+    
+    .yoga-description {
+        font-size: 1.1rem;
+        padding: 1.2rem;
+    }
+    
+    .session-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .poses-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main-title {
+        font-size: 2.2rem;
+    }
+    
+    .activity-tabs li a {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    .poses-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+body {
+    padding-top: 75px; /* Adjust this value based on your navbar height */
+}
+
+/* Alternatively, you can add it to the container */
+.section-container {
+    padding-top: 75px;
+}
+
+.hero.is-fullheight {
+    padding-top: 75px;
+}

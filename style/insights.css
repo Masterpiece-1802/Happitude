@@ -1,0 +1,255 @@
+/* Insights Page Styles with Dynamic Effects */
+.insights-section {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4efe9 100%);
+    min-height: calc(100vh - 140px);
+    position: relative;
+    overflow: hidden;
+}
+
+.animated-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.1;
+}
+
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(45deg, #48c78e, #3e8ed0);
+    top: -150px;
+    right: -150px;
+    animation: float 15s ease-in-out infinite;
+}
+
+.shape-2 {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, #f14668, #ffd166);
+    bottom: -100px;
+    left: 10%;
+    animation: float 12s ease-in-out infinite reverse;
+}
+
+.shape-3 {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(45deg, #7209b7, #4cc9f0);
+    top: 30%;
+    left: -75px;
+    animation: float 10s ease-in-out infinite;
+}
+
+.shape-4 {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, #06d6a0, #118ab2);
+    bottom: 20%;
+    right: 10%;
+    animation: float 8s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+}
+
+.insights-card {
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.insights-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.insights-header {
+    position: relative;
+    z-index: 1;
+}
+
+.chart-container {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.control-panel {
+    background: rgba(245, 247, 250, 0.9);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Custom select styling */
+.select select {
+    border-radius: 50px;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.select select:focus {
+    border-color: #48c78e;
+    box-shadow: 0 0 0 0.125em rgba(72, 199, 142, 0.25);
+}
+
+/* Notification styling */
+.notification {
+    border-left: 4px solid #3e8ed0;
+}
+
+/* Pulse animation for chart updates */
+.pulse {
+    animation: pulse 0.5s ease;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* Button styling */
+#download-chart {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+#download-chart::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: all 0.5s ease;
+}
+
+#download-chart:hover::before {
+    left: 100%;
+}
+
+#download-chart:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 14px rgba(72, 199, 142, 0.3);
+}
+
+/* Tag animations */
+.tag {
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1024px) {
+    .control-panel {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .field.mr-4, .field.ml-4 {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .chart-container {
+        height: 300px;
+    }
+    
+    .insights-card {
+        margin: 0 0.5rem;
+    }
+    
+    .title.is-2 {
+        font-size: 1.75rem;
+    }
+    
+    .subtitle.is-5 {
+        font-size: 1rem;
+    }
+}
+
+/* Animation classes */
+.fade-in {
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from { 
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.tag-fade-in {
+    animation: tagFadeIn 0.5s ease;
+}
+
+@keyframes tagFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add padding to the body to account for fixed navbar */
+body {
+    padding-top: 65px; /* Match the navbar height */
+}
+
+/* For mobile view */
+@media screen and (max-width: 1023px) {
+    body {
+        padding-top: 60px; /* Slightly reduced for mobile */
+    }
+}
+
