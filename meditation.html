@@ -1,59 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mindful Meditation</title>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="stylesheet" href="style/meditation.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activities</title>
-    <link rel="stylesheet" href="style/activities.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/navbar.css" />
+  </head>
 
-</head>
+  <body>
+    <nav class="playful-navbar" role="navigation" aria-label="main navigation">
+      <div class="nav-background">
+        <div class="bubble-container" id="bubbleContainer"></div>
+        <div class="nav-rainbow"></div>
+      </div>
 
-<body>
-    <div class="tabs is-centered">
-        <ul>
-            <li class="is-active"><a>Games</a></li>
+      <div class="navbar-container">
+        <div class="navbar-brand">
+          <a class="navbar-item logo-container" href="index.html">
+            <img
+              class="nav-logo"
+              src="images/logo.png"
+              alt="Logo"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjUwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0ZXh0IHg9IjE1IiB5PSIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMzMzIj5Mb2dvPC90ZXh0Pjwvc3ZnPg=='"
+            />
+            <span class="logo-sparkle"></span>
+          </a>
+
+          <button class="playful-burger" id="playfulBurger" aria-label="menu">
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+          </button>
+        </div>
+
+        <div class="navbar-menu playful-menu" id="playfulMenu">
+          <div class="navbar-start">
+            <a class="navbar-item playful-nav-item" href="index.html">
+              <span class="nav-icon">🏠</span>
+              <span class="nav-text">Home</span>
+              <span class="nav-bubble"></span>
+            </a>
+
+            <a class="navbar-item playful-nav-item" href="insights.html">
+              <span class="nav-icon">💡</span>
+              <span class="nav-text">Insights</span>
+              <span class="nav-bubble"></span>
+            </a>
+
+            <a class="navbar-item playful-nav-item" href="activities.html">
+              <span class="nav-icon">🎯</span>
+              <span class="nav-text">Activities</span>
+              <span class="nav-bubble"></span>
+            </a>
+
+            <a class="navbar-item playful-nav-item" href="quotes.html">
+              <span class="nav-icon">🗣️</span>
+              <span class="nav-text">Quotes</span>
+              <span class="nav-bubble"></span>
+            </a>
+
+            <a class="navbar-item playful-nav-item" href="tips.html">
+              <span class="nav-icon">💎</span>
+              <span class="nav-text">Tips</span>
+              <span class="nav-bubble"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-progress"></div>
+    </nav>
+
+    <div class="hero is-fullheight">
+      <!-- Tabs Container -->
+      <div class="tabs-container">
+        <div class="tabs is-centered activity-tabs">
+          <ul>
+            <li><a href="activities.html">Games</a></li>
             <li class="is-active"><a>Meditation</a></li>
             <li><a href="yoga.html">Yoga</a></li>
             <li><a href="motivation.html">Motivation</a></li>
             <li><a href="music.html">Music</a></li>
             <li><a href="podcast.html">Podcasts</a></li>
-            <li><a>Fun</a></li>
-    </div>
-    <div class="section">
-        <h1 class="title">Meditation Guide</h1>
-        <div class="columns">
-            <div class="column">
-                <div class="box">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/O-6f5wQXSu8"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="column">
-                <div class="box">
-                    <p class="subtitle">
-                        7 Benefits of Yoga for Young Kids
-                        Yoga helps children manage their anxiety.
-                        Yoga improves children's emotional regulation.
-                        Yoga boosts children's self-esteem.
-                        Yoga increases children's body awareness and mindfulness.
-                        Yoga enhances children's concentration and memory.
-                        Yoga develops children's strength and flexibility.
-
-                    </p>
-                </div>
-            </div>
+          </ul>
         </div>
+      </div>
+
+      <div class="section-container">
+        <div class="container">
+          <div class="text-center">
+            <h1 class="title main-title">Mindful Meditation</h1>
+            <div class="subtitle-container">
+              <p class="subtitle meditation-description">
+                Discover peace and calm through guided meditation sessions
+                designed especially for kids. Breathe in, breathe out, and find
+                your center.
+              </p>
+            </div>
+          </div>
+
+          <!-- Meditation Sessions -->
+          <div class="meditation-sessions">
+            <h2 class="category-title">Guided Meditation Sessions</h2>
+
+            <div class="columns is-multiline">
+              <!-- Session 1 -->
+              <div class="column is-6">
+                <div class="meditation-card">
+                  <div class="session-image">
+                    <img
+                      src="https://i.ytimg.com/vi/O-6f5wQXSu8/hqdefault.jpg"
+                      alt="Breathing Exercise"
+                    />
+                    <div class="play-overlay">
+                      <i class="fas fa-play-circle"></i>
+                    </div>
+                  </div>
+                  <div class="session-content">
+                    <h3>Breathing with Friends</h3>
+                    <p>
+                      Join your favorite characters as they teach you how to
+                      breathe deeply and calmly.
+                    </p>
+                    <div class="session-meta">
+                      <span><i class="fas fa-clock"></i> 8 mins</span>
+                      <span><i class="fas fa-heart"></i> Calming</span>
+                    </div>
+                    <a
+                      href="https://www.youtube.com/embed/O-6f5wQXSu8"
+                      class="button is-primary session-button"
+                      data-video-id="O-6f5wQXSu8"
+                    >
+                      <i class="fas fa-play"></i> Start Session
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Session 2 -->
+              <div class="column is-6">
+                <div class="meditation-card">
+                  <div class="session-image">
+                    <img
+                      src="https://i.ytimg.com/vi/Bk_qU7l-fcU/hqdefault.jpg"
+                      alt="Mindfulness for Kids"
+                    />
+                    <div class="play-overlay">
+                      <i class="fas fa-play-circle"></i>
+                    </div>
+                  </div>
+                  <div class="session-content">
+                    <h3>Mindful Adventure</h3>
+                    <p>
+                      Embark on an imaginary journey to a peaceful forest where
+                      you can relax and unwind.
+                    </p>
+                    <div class="session-meta">
+                      <span><i class="fas fa-clock"></i> 10 mins</span>
+                      <span><i class="fas fa-heart"></i> Relaxing</span>
+                    </div>
+                    <a
+                      href="https://www.youtube.com/embed/Bk_qU7l-fcU"
+                      class="button is-primary session-button"
+                      data-video-id="Bk_qU7l-fcU"
+                    >
+                      <i class="fas fa-play"></i> Start Session
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Session 3 -->
+              <div class="column is-6">
+                <div class="meditation-card">
+                  <div class="session-image">
+                    <img
+                      src="https://i.ytimg.com/vi/ZBnPlqQFPKs/hqdefault.jpg"
+                      alt="Focus Meditation"
+                    />
+                    <div class="play-overlay">
+                      <i class="fas fa-play-circle"></i>
+                    </div>
+                  </div>
+                  <div class="session-content">
+                    <h3>Focus & Concentration</h3>
+                    <p>
+                      Learn how to calm your mind and improve your focus with
+                      this engaging session.
+                    </p>
+                    <div class="session-meta">
+                      <span><i class="fas fa-clock"></i> 7 mins</span>
+                      <span><i class="fas fa-heart"></i> Focus</span>
+                    </div>
+                    <a
+                      href="https://www.youtube.com/embed/ZBnPlqQFPKs"
+                      class="button is-primary session-button"
+                      data-video-id="ZBnPlqQFPKs"
+                    >
+                      <i class="fas fa-play"></i> Start Session
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video Modal -->
+          <div class="modal meditation-modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <div class="box">
+                <div class="video-container">
+                  <iframe
+                    id="meditation-video"
+                    width="100%"
+                    height="400"
+                    src=""
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <button
+                  class="modal-close is-large"
+                  aria-label="close"
+                ></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Breathing Exercise -->
+          <div class="breathing-section">
+            <h2 class="category-title">Try a Breathing Exercise</h2>
+
+            <div class="breathing-exercise">
+              <div class="breathing-visual">
+                <div class="circle" id="breath-circle">
+                  <span>Breathe with me</span>
+                </div>
+              </div>
+              <div class="breathing-controls">
+                <p class="breath-instruction" id="breath-instruction">
+                  Click Start to begin
+                </p>
+                <button class="button is-primary" id="start-breathing">
+                  Start Breathing
+                </button>
+                <div class="breath-options">
+                  <span>Speed:</span>
+                  <button
+                    class="button is-small is-info speed-btn"
+                    data-speed="slow"
+                  >
+                    Slow
+                  </button>
+                  <button class="button is-small speed-btn" data-speed="normal">
+                    Normal
+                  </button>
+                  <button
+                    class="button is-small is-warning speed-btn"
+                    data-speed="fast"
+                  >
+                    Fast
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefits Section -->
+          <div class="benefits-section">
+            <h2 class="category-title">Benefits of Meditation for Kids</h2>
+
+            <div class="columns is-multiline">
+              <div class="column is-6">
+                <div class="benefit-card">
+                  <div class="benefit-icon">
+                    <i class="fas fa-brain"></i>
+                  </div>
+                  <h3>Improves Focus</h3>
+                  <p>
+                    Meditation helps children concentrate better in school and
+                    during activities.
+                  </p>
+                </div>
+              </div>
+
+              <div class="column is-6">
+                <div class="benefit-card">
+                  <div class="benefit-icon">
+                    <i class="fas fa-smile"></i>
+                  </div>
+                  <h3>Reduces Anxiety</h3>
+                  <p>
+                    Regular practice helps children manage worries and feel more
+                    calm.
+                  </p>
+                </div>
+              </div>
+
+              <div class="column is-6">
+                <div class="benefit-card">
+                  <div class="benefit-icon">
+                    <i class="fas fa-heart"></i>
+                  </div>
+                  <h3>Emotional Regulation</h3>
+                  <p>
+                    Kids learn to understand and manage their emotions in
+                    healthy ways.
+                  </p>
+                </div>
+              </div>
+
+              <div class="column is-6">
+                <div class="benefit-card">
+                  <div class="benefit-icon">
+                    <i class="fas fa-moon"></i>
+                  </div>
+                  <h3>Better Sleep</h3>
+                  <p>
+                    Meditation can help children relax and fall asleep more
+                    easily.
+                  </p>
+                </div>
+              </div>
+
+              <div class="column is-6">
+                <div class="benefit-card">
+                  <div class="benefit-icon">
+                    <i class="fas fa-users"></i>
+                  </div>
+                  <h3>Social Skills</h3>
+                  <p>
+                    Mindfulness helps children develop empathy and better
+                    communication.
+                  </p>
+                </div>
+              </div>
+
+              <div class="column is-6">
+                <div class="benefit-card">
+                  <div class="benefit-icon">
+                    <i class="fas fa-lightbulb"></i>
+                  </div>
+                  <h3>Creativity Boost</h3>
+                  <p>
+                    A calm mind has more space for creative thinking and
+                    problem-solving.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-</body>
+    <footer class="playful-footer">
+      <div class="footer-background">
+        <div class="footer-bubbles" id="footerBubbles"></div>
+        <div class="footer-rainbow"></div>
+      </div>
 
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="index.html">
+            <img
+              src="images/logo.png"
+              alt="Logo"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjUwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0ZXh0IHg9IjE1IiB5PSIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMzMzIj5Mb2dvPC90ZXh0Pjwvc3ZnPg=='"
+            />
+            <span class="logo-sparkle-footer"></span>
+          </a>
+        </div>
+
+        <div class="footer-links">
+          <a href="index.html" class="footer-link">
+            <span class="link-icon">🏠</span>
+            <span class="link-text">Home</span>
+          </a>
+          <a href="insights.html" class="footer-link">
+            <span class="link-icon">💡</span>
+            <span class="link-text">Insights</span>
+          </a>
+          <a href="activities.html" class="footer-link">
+            <span class="link-icon">🎯</span>
+            <span class="link-text">Activities</span>
+          </a>
+          <a href="quotes.html" class="footer-link">
+            <span class="link-icon">🗣️</span>
+            <span class="link-text">Quotes</span>
+          </a>
+          <a href="tips.html" class="footer-link">
+            <span class="link-icon">💎</span>
+            <span class="link-text">Tips</span>
+          </a>
+        </div>
+
+        <div class="footer-info">
+          <p class="footer-team">
+            <strong>Team Captivators</strong>
+            <br />
+            <a href="http://www.avcoe.org/">
+              Amrutvahini College of Engineering
+            </a>
+            <br />
+            Sangamner, Maharashtra
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script/navbar.js"></script>
+    <script src="script/meditation.js"></script>
+  </body>
 </html>

@@ -1,116 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sparkly Quotes</title>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style/quotes.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Activities</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/navbar.css" />
+  </head>
 
-</head>
+  <body>
+    <nav class="playful-navbar" role="navigation" aria-label="main navigation">
+      <div class="nav-background">
+        <div class="bubble-container" id="bubbleContainer"></div>
+        <div class="nav-rainbow"></div>
+      </div>
 
-<body>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item">
-        <img class="is-large" src="images/logo.png">
-      </a>
-      <a class="navbar-item" href="index.html">
-        Home
-      </a>
+      <div class="navbar-container">
+        <div class="navbar-brand">
+          <a class="navbar-item logo-container" href="index.html">
+            <img
+              class="nav-logo"
+              src="images/logo.png"
+              alt="Logo"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjUwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0ZXh0IHg9IjE1IiB5PSIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMzMzIj5Mb2dvPC90ZXh0Pjwvc3ZnPg=='"
+            />
+            <span class="logo-sparkle"></span>
+          </a>
 
-      <a class="navbar-item" href="insights.html">
-        Insights
-      </a>
-      <a class="navbar-item" href="activities.html">
-        Activities
-      </a>
-      <a class="navbar-item" href="quotes.html">
-        Quotes
-      </a>
-      <a class="navbar-item" href="tips.html">
-                Tips
+          <button class="playful-burger" id="playfulBurger" aria-label="menu">
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+          </button>
+        </div>
+
+        <div class="navbar-menu playful-menu" id="playfulMenu">
+          <div class="navbar-start">
+            <a class="navbar-item playful-nav-item" href="index.html">
+              <span class="nav-icon">🏠</span>
+              <span class="nav-text">Home</span>
+              <span class="nav-bubble"></span>
             </a>
-      
-    </div>
 
-    </div>
-  </nav>
-  <div class="hero is-fullheight">
-    <div class="section">
-      
-    <div class="container">
-            <div class="card-container">
-              <h1 class="title">Quotes:</h1>
-              <div class="box">
-                
-              <p class="subtitle">"Happiness is a choice, not a result. Nothing willl ,make you happy until you choose to be happy." -Ralph Marston
+            <a class="navbar-item playful-nav-item" href="insights.html">
+              <span class="nav-icon">💡</span>
+              <span class="nav-text">Insights</span>
+              <span class="nav-bubble"></span>
+            </a>
 
-              </p>
-            </div>
-            <div class="box">
+            <a class="navbar-item playful-nav-item" href="activities.html">
+              <span class="nav-icon">🎯</span>
+              <span class="nav-text">Activities</span>
+              <span class="nav-bubble"></span>
+            </a>
 
-              <p class="subtitle"> 
-                "How you choose to feel today should not be dependent on others." -Anthon St. Maarten
-              </p>
-            </div>
-            <div class="box">
+            <a class="navbar-item playful-nav-item" href="quotes.html">
+              <span class="nav-icon">🗣️</span>
+              <span class="nav-text">Quotes</span>
+              <span class="nav-bubble"></span>
+            </a>
 
-              <p class="subtitle">
-                "No matter what's happening, choose to be happy. Don't focus on what's wrong. Find something positive in your lfe. Thank God for 
-                small things - Joel Osteen"
-              </p>
-            </div>
-            
-            <div class="box">
-              <p class="subtitle">
-                Happiness already exists in your life. All you need to do is tune into it. And you can start doing that right now. -Anthon St.Maarten 
-
-              </p>
-            </div>
-            <div class="box">
-              <p class="subtitle">
-                Life is going by. Don't waste a minute being negative, offended, or bitter. Choose to be happy. -Joel Osteen 
-
-              </p>
-            </div>
-            <div class="box">
-
-              <p class="subtitle">
-                "No one has the power to make you happy or unhappy unless you allow them." -Debasish Mridha
-              </p>
-            </div>
-            <div class="box">
-              <p class="subtitle">
-                I no longe try to be right; I choose to be Happy. -Ric Eilas  
-
-              </p>
-            </div>
-            <div class="box">
-              <p class="subtitle">
-                "When you get up in the morning, you have two choices - either to be happy or to be unhappy. Just choose to be happy."-Norman Vincent Peale
-              </p>
-            </div>
-            <div class="box">
-              <p class="subtitle">
-                "Be so happy that when others look at you ,they become happy too." -Harbhajan Singh Yogi 
-              </p>
-            </div>
-            <div class="box">
-              <p class="subtitle">
-                "Remember that very little is needed to make a happy life." -Marcus Aurelius 
-              </p>
-            </div>
-            </div>
-            </div>
+            <a class="navbar-item playful-nav-item" href="tips.html">
+              <span class="nav-icon">💎</span>
+              <span class="nav-text">Tips</span>
+              <span class="nav-bubble"></span>
+            </a>
           </div>
         </div>
       </div>
-</body>
 
+      <div class="nav-progress"></div>
+    </nav>
+
+    <section class="hero quotes-hero">
+      <div class="glitter-burst" id="glitterBurst"></div>
+      <div class="floating-shapes">
+        <!-- Will be generated by JavaScript -->
+      </div>
+      <div class="quotes-container">
+        <h1 class="page-title">Notable Quotes</h1>
+
+        <div class="quote-card">
+          <div class="magic-sparkles" id="sparkles1"></div>
+          <p class="quote-text">
+            Happiness is a choice, not a result. Nothing will make you happy
+            until you choose to be happy.
+          </p>
+          <p class="quote-author">- Ralph Marston</p>
+          <button class="sparkle-btn"><i class="far fa-star"></i></button>
+        </div>
+
+        <div class="quote-card">
+          <div class="magic-sparkles" id="sparkles2"></div>
+          <p class="quote-text">
+            How you choose to feel today should not be dependent on others.
+          </p>
+          <p class="quote-author">- Anthon St. Maarten</p>
+          <button class="sparkle-btn"><i class="far fa-star"></i></button>
+        </div>
+
+        <div class="quote-card">
+          <div class="magic-sparkles" id="sparkles3"></div>
+          <p class="quote-text">
+            No matter what's happening, choose to be happy. Don't focus on
+            what's wrong. Find something positive in your life.
+          </p>
+          <p class="quote-author">- Joel Osteen</p>
+          <button class="sparkle-btn"><i class="far fa-star"></i></button>
+        </div>
+
+        <div class="quote-card">
+          <div class="magic-sparkles" id="sparkles4"></div>
+          <p class="quote-text">
+            Happiness already exists in your life. All you need to do is tune
+            into it. And you can start doing that right now.
+          </p>
+          <p class="quote-author">- Anthon St. Maarten</p>
+          <button class="sparkle-btn"><i class="far fa-star"></i></button>
+        </div>
+
+        <div class="quote-card">
+          <div class="magic-sparkles" id="sparkles5"></div>
+          <p class="quote-text">
+            Life is going by. Don't waste a minute being negative, offended, or
+            bitter. Choose to be happy.
+          </p>
+          <p class="quote-author">- Joel Osteen</p>
+          <button class="sparkle-btn"><i class="far fa-star"></i></button>
+        </div>
+
+        <div class="quote-card">
+          <div class="magic-sparkles" id="sparkles6"></div>
+          <p class="quote-text">
+            No one has the power to make you happy or unhappy unless you allow
+            them.
+          </p>
+          <p class="quote-author">- Debasish Mridha</p>
+          <button class="sparkle-btn"><i class="far fa-star"></i></button>
+        </div>
+
+        <div class="quote-card">
+          <div class="magic-sparkles" id="sparkles7"></div>
+          <p class="quote-text">
+            I no longer try to be right; I choose to be happy.
+          </p>
+          <p class="quote-author">- Ric Elias</p>
+          <button class="sparkle-btn"><i class="far fa-star"></i></button>
+        </div>
+
+        <div class="quote-card">
+          <div class="magic-sparkles" id="sparkles8"></div>
+          <p class="quote-text">
+            When you get up in the morning, you have two choices - either to be
+            happy or to be unhappy. Just choose to be happy.
+          </p>
+          <p class="quote-author">- Norman Vincent Peale</p>
+          <button class="sparkle-btn"><i class="far fa-star"></i></button>
+        </div>
+
+        <div class="quote-card">
+          <div class="magic-sparkles" id="sparkles9"></div>
+          <p class="quote-text">
+            Be so happy that when others look at you, they become happy too.
+          </p>
+          <p class="quote-author">- Harbhajan Singh Yogi</p>
+          <button class="sparkle-btn"><i class="far fa-star"></i></button>
+        </div>
+
+        <div class="quote-card">
+          <div class="magic-sparkles" id="sparkles10"></div>
+          <p class="quote-text">
+            Remember that very little is needed to make a happy life.
+          </p>
+          <p class="quote-author">- Marcus Aurelius</p>
+          <button class="sparkle-btn"><i class="far fa-star"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="playful-footer">
+      <div class="footer-background">
+        <div class="footer-bubbles" id="footerBubbles"></div>
+        <div class="footer-rainbow"></div>
+      </div>
+
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="index.html">
+            <img
+              src="images/logo.png"
+              alt="Logo"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjUwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0ZXh0IHg9IjE1IiB5PSIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMzMzIj5Mb2dvPC90ZXh0Pjwvc3ZnPg=='"
+            />
+            <span class="logo-sparkle-footer"></span>
+          </a>
+        </div>
+
+        <div class="footer-links">
+          <a href="index.html" class="footer-link">
+            <span class="link-icon">🏠</span>
+            <span class="link-text">Home</span>
+          </a>
+          <a href="insights.html" class="footer-link">
+            <span class="link-icon">💡</span>
+            <span class="link-text">Insights</span>
+          </a>
+          <a href="activities.html" class="footer-link">
+            <span class="link-icon">🎯</span>
+            <span class="link-text">Activities</span>
+          </a>
+          <a href="quotes.html" class="footer-link">
+            <span class="link-icon">🗣️</span>
+            <span class="link-text">Quotes</span>
+          </a>
+          <a href="tips.html" class="footer-link">
+            <span class="link-icon">💎</span>
+            <span class="link-text">Tips</span>
+          </a>
+        </div>
+
+        <div class="footer-info">
+          <p class="footer-team">
+            <strong>Team Captivators</strong>
+            <br />
+            <a href="http://www.avcoe.org/">
+              Amrutvahini College of Engineering
+            </a>
+            <br />
+            Sangamner, Maharashtra
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script/navbar.js"></script>
+
+    <script src="script/quotes.js"></script>
+  </body>
 </html>

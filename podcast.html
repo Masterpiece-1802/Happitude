@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kids Podcasts</title>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="stylesheet" href="style/podcasts.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="style/navbar.css" />
+  </head>
+
+  <body>
+    <nav class="playful-navbar" role="navigation" aria-label="main navigation">
+      <div class="nav-background">
+        <div class="bubble-container" id="bubbleContainer"></div>
+        <div class="nav-rainbow"></div>
+      </div>
+
+      <div class="navbar-container">
+        <div class="navbar-brand">
+          <a class="navbar-item logo-container" href="index.html">
+            <img
+              class="nav-logo"
+              src="images/logo.png"
+              alt="Logo"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjUwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0ZXh0IHg9IjE1IiB5PSIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMzMzIj5Mb2dvPC90ZXh0Pjwvc3ZnPg=='"
+            />
+            <span class="logo-sparkle"></span>
+          </a>
+
+          <button class="playful-burger" id="playfulBurger" aria-label="menu">
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+          </button>
+        </div>
+
+        <div class="navbar-menu playful-menu" id="playfulMenu">
+          <div class="navbar-start">
+            <a class="navbar-item playful-nav-item" href="index.html">
+              <span class="nav-icon">🏠</span>
+              <span class="nav-text">Home</span>
+              <span class="nav-bubble"></span>
+            </a>
+
+            <a class="navbar-item playful-nav-item" href="insights.html">
+              <span class="nav-icon">💡</span>
+              <span class="nav-text">Insights</span>
+              <span class="nav-bubble"></span>
+            </a>
+
+            <a class="navbar-item playful-nav-item" href="activities.html">
+              <span class="nav-icon">🎯</span>
+              <span class="nav-text">Activities</span>
+              <span class="nav-bubble"></span>
+            </a>
+
+            <a class="navbar-item playful-nav-item" href="quotes.html">
+              <span class="nav-icon">🗣️</span>
+              <span class="nav-text">Quotes</span>
+              <span class="nav-bubble"></span>
+            </a>
+
+            <a class="navbar-item playful-nav-item" href="tips.html">
+              <span class="nav-icon">💎</span>
+              <span class="nav-text">Tips</span>
+              <span class="nav-bubble"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-progress"></div>
+    </nav>
+
+    <div class="hero is-fullheight">
+      <!-- Tabs Container -->
+      <div class="tabs-container">
+        <div class="tabs is-centered activity-tabs">
+          <ul>
+            <li><a href="activities.html">Games</a></li>
+            <li><a href="meditation.html">Meditation</a></li>
+            <li><a href="yoga.html">Yoga</a></li>
+            <li><a href="motivation.html">Motivation</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li class="is-active"><a>Podcasts</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-container">
+        <div class="container">
+          <div class="text-center">
+            <h1 class="title main-title">Awesome Podcasts</h1>
+            <div class="subtitle-container">
+              <p class="subtitle podcasts-description">
+                Listen to fun stories, interesting facts, and exciting
+                adventures! Perfect for curious minds.
+              </p>
+            </div>
+          </div>
+
+          <!-- Featured Podcasts -->
+          <div class="featured-podcasts">
+            <h2 class="category-title">Featured Podcasts</h2>
+
+            <div class="podcast-player">
+              <div class="player-header">
+                <div class="podcast-art">
+                  <img
+                    src="https://i.ytimg.com/vi/2m5nWp5oJ0Y/hqdefault.jpg"
+                    alt="Story Time"
+                    id="current-podcast-art"
+                  />
+                  <div class="audio-waves">
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                  </div>
+                </div>
+                <div class="podcast-info">
+                  <h3 id="current-podcast-title">Adventure Stories</h3>
+                  <p id="current-podcast-series">Story Time with Annie</p>
+                  <div class="episode-info">
+                    <span>Episode 12: The Magic Forest</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="player-controls">
+                <audio id="podcast-player" controls>
+                  Your browser does not support the audio element.
+                </audio>
+                <div class="custom-controls">
+                  <button class="control-btn" id="rewind-btn">
+                    <i class="fas fa-backward"></i>
+                  </button>
+                  <button class="control-btn play-btn" id="play-podcast-btn">
+                    <i class="fas fa-play" id="play-podcast-icon"></i>
+                  </button>
+                  <button class="control-btn" id="forward-btn">
+                    <i class="fas fa-forward"></i>
+                  </button>
+                </div>
+                <div class="playback-speed">
+                  <span>Speed:</span>
+                  <select id="speed-select">
+                    <option value="0.75">0.75x</option>
+                    <option value="1" selected>1x</option>
+                    <option value="1.25">1.25x</option>
+                    <option value="1.5">1.5x</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="progress-container">
+                <span id="current-podcast-time">0:00</span>
+                <div class="progress-bar">
+                  <div class="progress-fill" id="podcast-progress-fill"></div>
+                </div>
+                <span id="total-podcast-time">0:00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Podcasts Library -->
+          <div class="podcasts-library">
+            <h2 class="category-title">Podcast Library</h2>
+
+            <div class="podcasts-grid">
+              <div
+                class="podcast-card"
+                data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+                data-title="Adventure Stories"
+                data-series="Story Time with Annie"
+                data-episode="Episode 12: The Magic Forest"
+                data-image="https://i.ytimg.com/vi/2m5nWp5oJ0Y/hqdefault.jpg"
+              >
+                <div class="podcast-image">
+                  <img
+                    src="https://i.ytimg.com/vi/2m5nWp5oJ0Y/hqdefault.jpg"
+                    alt="Adventure Stories"
+                  />
+                  <div class="play-overlay">
+                    <i class="fas fa-play-circle"></i>
+                  </div>
+                </div>
+                <div class="podcast-content">
+                  <div class="podcast-badge">New</div>
+                  <h3>Adventure Stories</h3>
+                  <p class="series">Story Time with Annie</p>
+                  <p class="episode">Episode 12: The Magic Forest</p>
+                  <p class="description">
+                    Join Annie on a magical journey through the enchanted forest
+                    where anything can happen!
+                  </p>
+                  <div class="podcast-meta">
+                    <span><i class="fas fa-clock"></i> 15 mins</span>
+                    <span><i class="fas fa-calendar"></i> 2 days ago</span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="podcast-card"
+                data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
+                data-title="Science Explorers"
+                data-series="Curious Kids"
+                data-episode="Episode 8: Space Adventure"
+                data-image="https://i.ytimg.com/vi/6cK2knQVjWw/hqdefault.jpg"
+              >
+                <div class="podcast-image">
+                  <img
+                    src="https://i.ytimg.com/vi/6cK2knQVjWw/hqdefault.jpg"
+                    alt="Science Explorers"
+                  />
+                  <div class="play-overlay">
+                    <i class="fas fa-play-circle"></i>
+                  </div>
+                </div>
+                <div class="podcast-content">
+                  <h3>Science Explorers</h3>
+                  <p class="series">Curious Kids</p>
+                  <p class="episode">Episode 8: Space Adventure</p>
+                  <p class="description">
+                    Blast off into space and learn about planets, stars, and
+                    galaxies in this exciting episode!
+                  </p>
+                  <div class="podcast-meta">
+                    <span><i class="fas fa-clock"></i> 18 mins</span>
+                    <span><i class="fas fa-calendar"></i> 1 week ago</span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="podcast-card"
+                data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+                data-title="Animal Friends"
+                data-series="Wildlife Wonders"
+                data-episode="Episode 5: Jungle Safari"
+                data-image="https://i.ytimg.com/vi/dL2L0a7pJ4Y/hqdefault.jpg"
+              >
+                <div class="podcast-image">
+                  <img
+                    src="https://i.ytimg.com/vi/dL2L0a7pJ4Y/hqdefault.jpg"
+                    alt="Animal Friends"
+                  />
+                  <div class="play-overlay">
+                    <i class="fas fa-play-circle"></i>
+                  </div>
+                </div>
+                <div class="podcast-content">
+                  <div class="podcast-badge">Popular</div>
+                  <h3>Animal Friends</h3>
+                  <p class="series">Wildlife Wonders</p>
+                  <p class="episode">Episode 5: Jungle Safari</p>
+                  <p class="description">
+                    Meet amazing jungle animals and learn about their habitats
+                    and behaviors.
+                  </p>
+                  <div class="podcast-meta">
+                    <span><i class="fas fa-clock"></i> 12 mins</span>
+                    <span><i class="fas fa-calendar"></i> 2 weeks ago</span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="podcast-card"
+                data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"
+                data-title="History Heroes"
+                data-series="Time Travelers"
+                data-episode="Episode 3: Ancient Egypt"
+                data-image="https://i.ytimg.com/vi/4ZpkRAcgws4/hqdefault.jpg"
+              >
+                <div class="podcast-image">
+                  <img
+                    src="https://i.ytimg.com/vi/4ZpkRAcgws4/hqdefault.jpg"
+                    alt="History Heroes"
+                  />
+                  <div class="play-overlay">
+                    <i class="fas fa-play-circle"></i>
+                  </div>
+                </div>
+                <div class="podcast-content">
+                  <h3>History Heroes</h3>
+                  <p class="series">Time Travelers</p>
+                  <p class="episode">Episode 3: Ancient Egypt</p>
+                  <p class="description">
+                    Travel back in time to discover the secrets of pyramids,
+                    pharaohs, and mummies!
+                  </p>
+                  <div class="podcast-meta">
+                    <span><i class="fas fa-clock"></i> 20 mins</span>
+                    <span><i class="fas fa-calendar"></i> 3 weeks ago</span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="podcast-card"
+                data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"
+                data-title="Mythical Tales"
+                data-series="Fantasy World"
+                data-episode="Episode 7: Dragon's Lair"
+                data-image="https://i.ytimg.com/vi/caB4X-Sn-vg/hqdefault.jpg"
+              >
+                <div class="podcast-image">
+                  <img
+                    src="https://i.ytimg.com/vi/caB4X-Sn-vg/hqdefault.jpg"
+                    alt="Mythical Tales"
+                  />
+                  <div class="play-overlay">
+                    <i class="fas fa-play-circle"></i>
+                  </div>
+                </div>
+                <div class="podcast-content">
+                  <h3>Mythical Tales</h3>
+                  <p class="series">Fantasy World</p>
+                  <p class="episode">Episode 7: Dragon's Lair</p>
+                  <p class="description">
+                    Enter a world of magic, dragons, and brave knights in this
+                    thrilling fantasy adventure.
+                  </p>
+                  <div class="podcast-meta">
+                    <span><i class="fas fa-clock"></i> 22 mins</span>
+                    <span><i class="fas fa-calendar"></i> 1 month ago</span>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="podcast-card"
+                data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"
+                data-title="Super Scientists"
+                data-series="Discovery Club"
+                data-episode="Episode 4: Amazing Experiments"
+                data-image="https://i.ytimg.com/vi/1aU5a4qYFxY/hqdefault.jpg"
+              >
+                <div class="podcast-image">
+                  <img
+                    src="https://i.ytimg.com/vi/1aU5a4qYFxY/hqdefault.jpg"
+                    alt="Super Scientists"
+                  />
+                  <div class="play-overlay">
+                    <i class="fas fa-play-circle"></i>
+                  </div>
+                </div>
+                <div class="podcast-content">
+                  <div class="podcast-badge">Featured</div>
+                  <h3>Super Scientists</h3>
+                  <p class="series">Discovery Club</p>
+                  <p class="episode">Episode 4: Amazing Experiments</p>
+                  <p class="description">
+                    Join the Discovery Club for fun and safe experiments you can
+                    try at home!
+                  </p>
+                  <div class="podcast-meta">
+                    <span><i class="fas fa-clock"></i> 16 mins</span>
+                    <span><i class="fas fa-calendar"></i> 1 month ago</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Podcast Categories -->
+          <div class="categories-section">
+            <h2 class="category-title">Categories</h2>
+
+            <div class="categories-grid">
+              <div class="category-card" data-category="stories">
+                <div class="category-icon">
+                  <i class="fas fa-book"></i>
+                </div>
+                <h3>Stories</h3>
+                <p>Adventure, fantasy, and bedtime stories</p>
+              </div>
+
+              <div class="category-card" data-category="science">
+                <div class="category-icon">
+                  <i class="fas fa-flask"></i>
+                </div>
+                <h3>Science</h3>
+                <p>Experiments, space, and nature</p>
+              </div>
+
+              <div class="category-card" data-category="history">
+                <div class="category-icon">
+                  <i class="fas fa-landmark"></i>
+                </div>
+                <h3>History</h3>
+                <p>Ancient civilizations and famous people</p>
+              </div>
+
+              <div class="category-card" data-category="funny">
+                <div class="category-icon">
+                  <i class="fas fa-laugh"></i>
+                </div>
+                <h3>Funny</h3>
+                <p>Jokes, riddles, and silly stories</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subscribe Section -->
+          <div class="subscribe-section">
+            <h2 class="category-title">Never Miss an Episode</h2>
+
+            <div class="subscribe-card">
+              <div class="subscribe-content">
+                <h3>Subscribe to Updates</h3>
+                <p>Get notified when new episodes are released!</p>
+                <form class="subscribe-form">
+                  <div class="field has-addons">
+                    <div class="control">
+                      <input
+                        class="input"
+                        type="email"
+                        placeholder="Your email address"
+                        required
+                      />
+                    </div>
+                    <div class="control">
+                      <button type="submit" class="button is-primary">
+                        Subscribe
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="subscribe-image">
+                <i class="fas fa-podcast"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="playful-footer">
+      <div class="footer-background">
+        <div class="footer-bubbles" id="footerBubbles"></div>
+        <div class="footer-rainbow"></div>
+      </div>
+
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="index.html">
+            <img
+              src="images/logo.png"
+              alt="Logo"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjUwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0ZXh0IHg9IjE1IiB5PSIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMzMzIj5Mb2dvPC90ZXh0Pjwvc3ZnPg=='"
+            />
+            <span class="logo-sparkle-footer"></span>
+          </a>
+        </div>
+
+        <div class="footer-links">
+          <a href="index.html" class="footer-link">
+            <span class="link-icon">🏠</span>
+            <span class="link-text">Home</span>
+          </a>
+          <a href="insights.html" class="footer-link">
+            <span class="link-icon">💡</span>
+            <span class="link-text">Insights</span>
+          </a>
+          <a href="activities.html" class="footer-link">
+            <span class="link-icon">🎯</span>
+            <span class="link-text">Activities</span>
+          </a>
+          <a href="quotes.html" class="footer-link">
+            <span class="link-icon">🗣️</span>
+            <span class="link-text">Quotes</span>
+          </a>
+          <a href="tips.html" class="footer-link">
+            <span class="link-icon">💎</span>
+            <span class="link-text">Tips</span>
+          </a>
+        </div>
+
+        <div class="footer-info">
+          <p class="footer-team">
+            <strong>Team Captivators</strong>
+            <br />
+            <a href="http://www.avcoe.org/">
+              Amrutvahini College of Engineering
+            </a>
+            <br />
+            Sangamner, Maharashtra
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script/navbar.js"></script>
+
+    <script src="script/podcasts.js"></script>
+  </body>
+</html>

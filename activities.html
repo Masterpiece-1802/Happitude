@@ -1,190 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fun Activities</title>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="stylesheet" href="style/activities.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activities</title>
-    <link rel="stylesheet" href="style/activities.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/navbar.css" />
+  </head>
 
-</head>
+  <body>
+    <nav class="playful-navbar" role="navigation" aria-label="main navigation">
+      <div class="nav-background">
+        <div class="bubble-container" id="bubbleContainer"></div>
+        <div class="nav-rainbow"></div>
+      </div>
 
-<body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-container">
         <div class="navbar-brand">
-            <a class="navbar-item">
-                <img class="is-large" src="images/logo.jpeg">
-            </a>
-            <a class="navbar-item" href="index.html">
-                Home
-            </a>
+          <a class="navbar-item logo-container" href="index.html">
+            <img
+              class="nav-logo"
+              src="images/logo.png"
+              alt="Logo"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjUwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0ZXh0IHg9IjE1IiB5PSIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMzMzIj5Mb2dvPC90ZXh0Pjwvc3ZnPg=='"
+            />
+            <span class="logo-sparkle"></span>
+          </a>
 
-            <a class="navbar-item" href="insights.html">
-                Insights
-            </a>
-            <a class="navbar-item" href="activities.html">
-                Activities
-
-            </a>
-            <a class="navbar-item" href="quotes.html">
-                Quotes
-            </a>
-            <a class="navbar-item" href="tips.html">
-                Tips
-            </a>
+          <button class="playful-burger" id="playfulBurger" aria-label="menu">
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+          </button>
         </div>
 
-        </div>
+        <div class="navbar-menu playful-menu" id="playfulMenu">
+          <div class="navbar-start">
+            <a class="navbar-item playful-nav-item" href="index.html">
+              <span class="nav-icon">🏠</span>
+              <span class="nav-text">Home</span>
+              <span class="nav-bubble"></span>
+            </a>
 
+            <a class="navbar-item playful-nav-item" href="insights.html">
+              <span class="nav-icon">💡</span>
+              <span class="nav-text">Insights</span>
+              <span class="nav-bubble"></span>
+            </a>
 
-    </nav>
-    <div class="hero is-fullheight">
-        <div class="tabs is-centered">
-            <ul>
-              <li class="is-active"><a>Games</a></li>
-            <li><a href="meditation.html">Meditation</a></li>
-              <li><a href="yoga.html">Yoga</a></li>
-              <li><a href="motivation.html">Motivation</a></li>
-              <li><a href="music.html">Music</a></li>
-              <li><a href="podcast.html">Podcasts</a></li>
-              <li><a>Fun</a></li>
+            <a class="navbar-item playful-nav-item" href="activities.html">
+              <span class="nav-icon">🎯</span>
+              <span class="nav-text">Activities</span>
+              <span class="nav-bubble"></span>
+            </a>
+
+            <a class="navbar-item playful-nav-item" href="quotes.html">
+              <span class="nav-icon">🗣️</span>
+              <span class="nav-text">Quotes</span>
+              <span class="nav-bubble"></span>
+            </a>
+
+            <a class="navbar-item playful-nav-item" href="tips.html">
+              <span class="nav-icon">💎</span>
+              <span class="nav-text">Tips</span>
+              <span class="nav-bubble"></span>
+            </a>
           </div>
-        <div class="section-container">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <img src="" class="img-responsive" alt="">
-                        <div class="card-container">
-                            <div class="box is-primary">
-                                <p id="score" class="subtitle"></p>
-                            </div>
-                            <script>
-                                const score = localStorage.getItem('score')
-                                document.getElementById("score").innerHTML = "Your happiness score is "+score
-                            </script>
-                            <div class="text-center">
-                                <h1 class="title">Games</h1>
-                                <img src="" alt="">
-
-                            </div>
-                            <p class="subtitle ">Here we have brought you a variety of single-player and multiplayer
-                                fun games to play anytime, anywhere and, with anyone. It could be your friends or random
-                                people from around the world.</p>
-                        </div>
-                    </div>
-                    <div class="happiness">
-                        <div class="col-sm-4">
-                            <a href="" title="">
-                                <img src="" alt="" class="img-responsive">
-                            </a>
-                            <div class="card-container card-container-lg">
-                                <h3 class="title">1. Slither</h3>
-                                <img src="images/Google-Snake-Game-2.webp" alt="Images" height="400px" width="500px">
-                                <p>
-                                    <a href="http://slither.io/" title="" class="button is-primary">Play</a>
-                                </p>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!--/row-->
-
-                    <div class="row">
-
-                        <div class="col-sm-4">
-                            <a href="" title="">
-                                <img src="" alt="" class="img-responsive">
-                            </a>
-                            <div class="card-container card-container-lg">
-                                <h3 class="title">2.Tetr</h3>
-                                <img src="images/block-puzzle-classic.webp" alt="images" height="400px" width="500px">
-                                <p>
-                                    <a href="https://tetr.io/" title="" class="button is-primary">Play</a>
-                                </p>
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <!--/row-->
-
-                    <div class="row">
-                        <div class="col-sm-4">
-
-                            <a href="" title="">
-                                <img src="./assets/images/games/7.jpg" alt="" class="img-responsive">
-                            </a>
-                            <div class="card-container card-container-lg">
-                                <h3 class="title">3.2048</h3>
-                                <img src="images/2048-review.jpg-2.webp" alt="images" height="400px" width="500px">
-                                <p>
-                                    <a href="http://2048.io/" title="" class="button is-primary">Play</a>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <a href="" title="">
-                                <img src="./assets/images/games/8.png" alt="" class="img-responsive">
-                            </a>
-                            <div class="card-container card-container-lg">
-                                <h3 class="title">4.Hustle</h3>
-                                <img src="images/apps.2341.14595722425587222.a796e7cf-1c7d-4a88-9503-9257c45c6689.b4586568-998e-4996-bc6a-9fc57d9ab50b.jpeg"
-                                    alt="images" height="400" width="500" class="img-responsive">
-                                <p> <a href="https://krunker.io/" title="" class="button is-primary">Play</a>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <a href="" title="">
-
-                            </a>
-                            <div class="card-container card-container-lg">
-                                <h3 class="title">5.Smash Karts</h3>
-                                <img src="images/smartkarts.jpg" alt="images" height="400px" width="500px">
-                                <p>
-                                    <a href="https://smashkarts.io/" title="" class="button is-primary">Play</a>
-
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="card-container card-container-lg">
-                                <h3 class="title">Motivational videos</h3>
-
-                                <p>
-                                    <a href="https://smashkarts.io/" title="" class="button is-primary">Play</a>
-
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
-    </div>
-    </div>
+      </div>
 
-    <footer class="footer-container text-center">
+      <div class="nav-progress"></div>
+    </nav>
+
+    <div class="hero is-fullheight">
+      <!-- Improved Tabs -->
+      <div class="tabs-container">
+        <div class="tabs is-centered activity-tabs">
+          <ul>
+            <li class="is-active"><a>Games</a></li>
+            <li><a href="meditation.html">Meditation</a></li>
+            <li><a href="yoga.html">Yoga</a></li>
+            <li><a href="motivation.html">Motivation</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="podcast.html">Podcasts</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-container">
         <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <p>Captivators 1.0 </p>
-                </div>
+          <div class="text-center">
+            <h1 class="title main-title">Fun Games</h1>
+            <div class="subtitle-container">
+              <p class="subtitle game-description">
+                Discover awesome games to play anytime, anywhere! Challenge your
+                friends or make new ones from around the world.
+              </p>
             </div>
+          </div>
+
+          <!-- Games grid -->
+          <div class="games-grid">
+            <!-- Game 1 -->
+            <div class="game-card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img
+                    src="images/Google-Snake-Game-2.webp"
+                    alt="Slither Game"
+                  />
+                  <div class="game-overlay"></div>
+                </figure>
+                <div class="game-number">1</div>
+              </div>
+              <div class="card-content">
+                <h3 class="title is-4">Slither.io</h3>
+                <p>
+                  Grow your snake by eating pellets while avoiding other snakes
+                  in this massive multiplayer game!
+                </p>
+                <div class="game-features">
+                  <span class="feature-tag">Multiplayer</span>
+                  <span class="feature-tag">Action</span>
+                </div>
+                <div class="play-button-container">
+                  <a
+                    href="http://slither.io/"
+                    class="button is-primary play-button"
+                  >
+                    <i class="fas fa-gamepad"></i> Play Now
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Game 2 -->
+            <div class="game-card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="images/block-puzzle-classic.webp" alt="Tetr Game" />
+                  <div class="game-overlay"></div>
+                </figure>
+                <div class="game-number">2</div>
+              </div>
+              <div class="card-content">
+                <h3 class="title is-4">Tetr.io</h3>
+                <p>
+                  Classic block-stacking puzzle game with modern enhancements
+                  and competitive multiplayer!
+                </p>
+                <div class="game-features">
+                  <span class="feature-tag">Puzzle</span>
+                  <span class="feature-tag">Multiplayer</span>
+                </div>
+                <div class="play-button-container">
+                  <a
+                    href="https://tetr.io/"
+                    class="button is-primary play-button"
+                  >
+                    <i class="fas fa-gamepad"></i> Play Now
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Game 3 -->
+            <div class="game-card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="images/2048-review.jpg-2.webp" alt="2048 Game" />
+                  <div class="game-overlay"></div>
+                </figure>
+                <div class="game-number">3</div>
+              </div>
+              <div class="card-content">
+                <h3 class="title is-4">2048</h3>
+                <p>
+                  Combine tiles with the same numbers to reach the elusive 2048
+                  tile in this addictive puzzle!
+                </p>
+                <div class="game-features">
+                  <span class="feature-tag">Puzzle</span>
+                  <span class="feature-tag">Strategy</span>
+                </div>
+                <div class="play-button-container">
+                  <a
+                    href="http://2048.io/"
+                    class="button is-primary play-button"
+                  >
+                    <i class="fas fa-gamepad"></i> Play Now
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Game 4 -->
+            <div class="game-card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img
+                    src="images/apps.2341.14595722425587222.a796e7cf-1c7d-4a88-9503-9257c45c6689.b4586568-998e-4996-bc6a-9fc57d9ab50b.jpeg"
+                    alt="Hustle Game"
+                  />
+                  <div class="game-overlay"></div>
+                </figure>
+                <div class="game-number">4</div>
+              </div>
+              <div class="card-content">
+                <h3 class="title is-4">Krunker.io</h3>
+                <p>
+                  Fast-paced multiplayer shooter with customizable gameplay and
+                  smooth controls!
+                </p>
+                <div class="game-features">
+                  <span class="feature-tag">Action</span>
+                  <span class="feature-tag">Shooter</span>
+                </div>
+                <div class="play-button-container">
+                  <a
+                    href="https://krunker.io/"
+                    class="button is-primary play-button"
+                  >
+                    <i class="fas fa-gamepad"></i> Play Now
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Game 5 -->
+            <div class="game-card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="images/smartkarts.jpg" alt="Smash Karts Game" />
+                  <div class="game-overlay"></div>
+                </figure>
+                <div class="game-number">5</div>
+              </div>
+              <div class="card-content">
+                <h3 class="title is-4">Smash Karts</h3>
+                <p>
+                  Battle it out in explosive kart racing combat with power-ups
+                  and crazy weapons!
+                </p>
+                <div class="game-features">
+                  <span class="feature-tag">Racing</span>
+                  <span class="feature-tag">Multiplayer</span>
+                </div>
+                <div class="play-button-container">
+                  <a
+                    href="https://smashkarts.io/"
+                    class="button is-primary play-button"
+                  >
+                    <i class="fas fa-gamepad"></i> Play Now
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category Section -->
+          <div class="category-section">
+            <h2 class="category-title">Game Categories</h2>
+            <div class="category-grid">
+              <div class="category-card">
+                <div class="category-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <h3>Multiplayer</h3>
+                <p>Play with friends or people around the world</p>
+              </div>
+              <div class="category-card">
+                <div class="category-icon">
+                  <i class="fas fa-puzzle-piece"></i>
+                </div>
+                <h3>Puzzle</h3>
+                <p>Challenge your brain with mind-bending puzzles</p>
+              </div>
+              <div class="category-card">
+                <div class="category-icon">
+                  <i class="fas fa-running"></i>
+                </div>
+                <h3>Action</h3>
+                <p>Fast-paced games for adrenaline junkies</p>
+              </div>
+              <div class="category-card">
+                <div class="category-icon">
+                  <i class="fas fa-chess"></i>
+                </div>
+                <h3>Strategy</h3>
+                <p>Think ahead and outsmart your opponents</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="playful-footer">
+      <div class="footer-background">
+        <div class="footer-bubbles" id="footerBubbles"></div>
+        <div class="footer-rainbow"></div>
+      </div>
+
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="index.html">
+            <img
+              src="images/logo.png"
+              alt="Logo"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjUwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0ZXh0IHg9IjE1IiB5PSIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMzMzIj5Mb2dvPC90ZXh0Pjwvc3ZnPg=='"
+            />
+            <span class="logo-sparkle-footer"></span>
+          </a>
         </div>
 
+        <div class="footer-links">
+          <a href="index.html" class="footer-link">
+            <span class="link-icon">🏠</span>
+            <span class="link-text">Home</span>
+          </a>
+          <a href="insights.html" class="footer-link">
+            <span class="link-icon">💡</span>
+            <span class="link-text">Insights</span>
+          </a>
+          <a href="activities.html" class="footer-link">
+            <span class="link-icon">🎯</span>
+            <span class="link-text">Activities</span>
+          </a>
+          <a href="quotes.html" class="footer-link">
+            <span class="link-icon">🗣️</span>
+            <span class="link-text">Quotes</span>
+          </a>
+          <a href="tips.html" class="footer-link">
+            <span class="link-icon">💎</span>
+            <span class="link-text">Tips</span>
+          </a>
+        </div>
 
+        <div class="footer-info">
+          <p class="footer-team">
+            <strong>Team Captivators</strong>
+            <br />
+            <a href="http://www.avcoe.org/">
+              Amrutvahini College of Engineering
+            </a>
+            <br />
+            Sangamner, Maharashtra
+          </p>
+        </div>
+      </div>
     </footer>
-</body>
 
-</html>
+    <script src="script/navbar.js"></script>
 
-</body>
-
+    <script src="script/activities.js"></script>
+  </body>
 </html>

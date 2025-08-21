@@ -1,95 +1,217 @@
 <!DOCTYPE html>
 <html class="has-navbar-fixed-top">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Home</title>
 
-    <link rel="stylesheet" href="style/index.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/logo.png" />
 
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-</head>
+    <link rel="stylesheet" href="style/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
 
-<body>
-    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="style/navbar.css" />
+  </head>
+
+  <body>
+    <nav class="playful-navbar" role="navigation" aria-label="main navigation">
+      <div class="nav-background">
+        <div class="bubble-container" id="bubbleContainer"></div>
+        <div class="nav-rainbow"></div>
+      </div>
+
+      <div class="navbar-container">
         <div class="navbar-brand">
-            <a class="navbar-item">
-                <img class="is-large" src="images/logo.png">
-            </a>
-            <a class="navbar-item" href="index.html">
-                Home
+          <a class="navbar-item logo-container" href="index.html">
+            <img
+              class="nav-logo"
+              src="images/logo.png"
+              alt="Logo"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjUwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0ZXh0IHg9IjE1IiB5PSIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMzMzIj5Mb2dvPC90ZXh0Pjwvc3ZnPg=='"
+            />
+            <span class="logo-sparkle"></span>
+          </a>
+
+          <button class="playful-burger" id="playfulBurger" aria-label="menu">
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+          </button>
+        </div>
+
+        <div class="navbar-menu playful-menu" id="playfulMenu">
+          <div class="navbar-start">
+            <a class="navbar-item playful-nav-item" href="index.html">
+              <span class="nav-icon">🏠</span>
+              <span class="nav-text">Home</span>
+              <span class="nav-bubble"></span>
             </a>
 
-            <a class="navbar-item" href="insights.html">
-                Insights
-            </a>
-            <a class="navbar-item" href="activities.html">
-                Activities
-            </a>
-            <a class="navbar-item" href="quotes.html">
-                Quotes
-            </a>
-            <a class="navbar-item" href="tips.html">
-                Tips
+            <a class="navbar-item playful-nav-item" href="insights.html">
+              <span class="nav-icon">💡</span>
+              <span class="nav-text">Insights</span>
+              <span class="nav-bubble"></span>
             </a>
 
+            <a class="navbar-item playful-nav-item" href="activities.html">
+              <span class="nav-icon">🎯</span>
+              <span class="nav-text">Activities</span>
+              <span class="nav-bubble"></span>
+            </a>
+
+            <a class="navbar-item playful-nav-item" href="quotes.html">
+              <span class="nav-icon">🗣️</span>
+              <span class="nav-text">Quotes</span>
+              <span class="nav-bubble"></span>
+            </a>
+
+            <a class="navbar-item playful-nav-item" href="tips.html">
+              <span class="nav-icon">💎</span>
+              <span class="nav-text">Tips</span>
+              <span class="nav-bubble"></span>
+            </a>
+          </div>
         </div>
-        </div>
+      </div>
+
+      <div class="nav-progress"></div>
     </nav>
-    <div class="hero is-fullheight">
-        <section class="section">
-            <div class="columns">
-                <div class="column ">
-                    <div class="box">
-                        <h1 class="title is-1">How Happy Are <br>You?</h1>
-                        <p class="subtitle ">Think you might be naturally happier than average? Take this quiz to find
-                            out and then learn some expert tips to boost your mood."</p>
 
-                        <a class="button is-success is-outlined" href="login.html">Take test</a>
-                    </div>
-                    
-<!--                <div class="tile is-child box">
-                        <p class="title">Streak</p>
-                        <p></p>
-                    </div> -->
-                </div>
-                <div class="column">
-                    <div class="tile is-ancestor">
-                        <div class="tile is-5 is-vertical is-parent">
-                            <div class="tile is-child box">
-                                <p class="title">"Quote"</p>
-                                <p>There is some kind of sweet inocence in being human, in not having to be just happy or just sad, in the nature of being able to be both broken and whole, at the same time.</p>
-                            </div>
-                        </div>
-                        <div class="tile is-parent">
-                            <div class="tile is-child box">
-                                <img src="images/Surf Van - Vintage Beach Welcome Mat.jpg" alt="">
-                                "It's so incredible to finally be understood."
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="hero is-fullheight">
+      <!-- Floating elements 
+      <div class="floating-elements">
+        <div class="floating-icon">😊</div>
+        <div class="floating-icon">🌟</div>
+        <div class="floating-icon">🎈</div>
+        <div class="floating-icon">🎨</div>
+        <div class="floating-icon">🎁</div>
+      </div>-->
+
+      <section class="section">
+        <div class="columns is-vcentered">
+          <div class="column">
+            <div class="box playful-box" id="mainBox">
+              <h1 class="title is-1 has-text-centered-mobile">
+                How Happy Are <br />You?
+              </h1>
+              <p class="subtitle">
+                Think you might be naturally happier than average? Take this
+                quiz to find out and then learn some expert tips to boost your
+                mood.
+              </p>
+
+              <a
+                class="button is-success is-outlined is-medium playful-button"
+                href="login.html"
+              >
+                <span>Take test</span>
+              </a>
+
+              <div class="confetti-container" id="confettiContainer"></div>
             </div>
-        </section>
+          </div>
+          <div class="column">
+            <div class="tile is-ancestor">
+              <div class="tile is-5 is-vertical is-parent">
+                <div class="tile is-child box playful-quote-box" id="quoteBox">
+                  <p class="title">"Quote"</p>
+                  <p class="quote-content">
+                    There is some kind of sweet innocence in being human, in not
+                    having to be just happy or just sad, in the nature of being
+                    able to be both broken and whole, at the same time.
+                  </p>
+                  <div class="quote-decoration">❝</div>
+                </div>
+              </div>
+              <div class="tile is-parent">
+                <div class="tile is-child box playful-image-box">
+                  <div class="image-container">
+                    <img
+                      src="images/Surf Van - Vintage Beach Welcome Mat.jpg"
+                      alt="Surf Van at Beach"
+                    />
+                  </div>
+                  <p class="image-caption">
+                    "It's so incredible to finally be understood."
+                  </p>
+                  <div class="sparkle-overlay"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
-    <footer class="footer">
-        <div class="content has-text-centered">
-            <p>
-                <strong>Team Captivators</strong>
-                <br>
-                <a href="http://www.avcoe.org/">
-                    Amrutvahini college of engineering
-                </a>
-                <br>
-                Sangamner, Maharastra
-            </p>
-        </div>
-    </footer>
-</body>
+    <footer class="playful-footer">
+      <div class="footer-background">
+        <div class="footer-bubbles" id="footerBubbles"></div>
+        <div class="footer-rainbow"></div>
+      </div>
 
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="index.html">
+            <img
+              src="images/logo.png"
+              alt="Logo"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjUwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0ZXh0IHg9IjE1IiB5PSIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMzMzIj5Mb2dvPC90ZXh0Pjwvc3ZnPg=='"
+            />
+            <span class="logo-sparkle-footer"></span>
+          </a>
+        </div>
+
+        <div class="footer-links">
+          <a href="index.html" class="footer-link">
+            <span class="link-icon">🏠</span>
+            <span class="link-text">Home</span>
+          </a>
+          <a href="insights.html" class="footer-link">
+            <span class="link-icon">💡</span>
+            <span class="link-text">Insights</span>
+          </a>
+          <a href="activities.html" class="footer-link">
+            <span class="link-icon">🎯</span>
+            <span class="link-text">Activities</span>
+          </a>
+          <a href="quotes.html" class="footer-link">
+            <span class="link-icon">🗣️</span>
+            <span class="link-text">Quotes</span>
+          </a>
+          <a href="tips.html" class="footer-link">
+            <span class="link-icon">💎</span>
+            <span class="link-text">Tips</span>
+          </a>
+        </div>
+
+        <div class="footer-info">
+          <p class="footer-team">
+            <strong>Team Captivators</strong>
+            <br />
+            <a href="http://www.avcoe.org/">
+              Amrutvahini College of Engineering
+            </a>
+            <br />
+            Sangamner, Maharashtra
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script/navbar.js"></script>
+    <script src="script/index.js"></script>
+  </body>
 </html>

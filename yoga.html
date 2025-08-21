@@ -1,57 +1,565 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fun Yoga for Kids</title>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="stylesheet" href="style/yoga.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Activities</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style/index.css">
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
 
-</head>
+    <link rel="stylesheet" href="style/navbar.css" />
+  </head>
 
-<body>
+  <body>
+    <nav class="playful-navbar" role="navigation" aria-label="main navigation">
+      <div class="nav-background">
+        <div class="bubble-container" id="bubbleContainer"></div>
+        <div class="nav-rainbow"></div>
+      </div>
 
-    <div class="tabs is-centered">
-        <ul>
+      <div class="navbar-container">
+        <div class="navbar-brand">
+          <a class="navbar-item logo-container" href="index.html">
+            <img
+              class="nav-logo"
+              src="images/logo.png"
+              alt="Logo"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjUwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0ZXh0IHg9IjE1IiB5PSIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMzMzIj5Mb2dvPC90ZXh0Pjwvc3ZnPg=='"
+            />
+            <span class="logo-sparkle"></span>
+          </a>
+
+          <button class="playful-burger" id="playfulBurger" aria-label="menu">
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+          </button>
+        </div>
+
+        <div class="navbar-menu playful-menu" id="playfulMenu">
+          <div class="navbar-start">
+            <a class="navbar-item playful-nav-item" href="index.html">
+              <span class="nav-icon">🏠</span>
+              <span class="nav-text">Home</span>
+              <span class="nav-bubble"></span>
+            </a>
+
+            <a class="navbar-item playful-nav-item" href="insights.html">
+              <span class="nav-icon">💡</span>
+              <span class="nav-text">Insights</span>
+              <span class="nav-bubble"></span>
+            </a>
+
+            <a class="navbar-item playful-nav-item" href="activities.html">
+              <span class="nav-icon">🎯</span>
+              <span class="nav-text">Activities</span>
+              <span class="nav-bubble"></span>
+            </a>
+
+            <a class="navbar-item playful-nav-item" href="quotes.html">
+              <span class="nav-icon">🗣️</span>
+              <span class="nav-text">Quotes</span>
+              <span class="nav-bubble"></span>
+            </a>
+
+            <a class="navbar-item playful-nav-item" href="tips.html">
+              <span class="nav-icon">💎</span>
+              <span class="nav-text">Tips</span>
+              <span class="nav-bubble"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-progress"></div>
+    </nav>
+
+    <div class="hero is-fullheight">
+      <!-- Tabs Container -->
+      <div class="tabs-container">
+        <div class="tabs is-centered activity-tabs">
+          <ul>
             <li><a href="activities.html">Games</a></li>
             <li><a href="meditation.html">Meditation</a></li>
             <li class="is-active"><a>Yoga</a></li>
             <li><a href="motivation.html">Motivation</a></li>
             <li><a href="music.html">Music</a></li>
             <li><a href="podcast.html">Podcasts</a></li>
-            <li><a>Fun</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-container">
+        <div class="container">
+          <div class="text-center">
+            <h1 class="title main-title">Fun Yoga Adventures</h1>
+            <div class="subtitle-container">
+              <p class="subtitle yoga-description">
+                Stretch, bend, and play with these fun yoga exercises designed
+                especially for kids! Discover how yoga can be both fun and
+                healthy.
+              </p>
+            </div>
+          </div>
+
+          <!-- Yoga Sessions -->
+          <div class="yoga-sessions">
+            <h2 class="category-title">Yoga Videos for Kids</h2>
+
+            <div class="columns is-multiline">
+              <!-- Session 1 -->
+              <div class="column is-6">
+                <div class="yoga-card">
+                  <div class="session-image">
+                    <img
+                      src="https://i.ytimg.com/vi/X655B4ISakg/hqdefault.jpg"
+                      alt="Yoga for Kids"
+                    />
+                    <div class="play-overlay">
+                      <i class="fas fa-play-circle"></i>
+                    </div>
+                  </div>
+                  <div class="session-content">
+                    <h3>Yoga for Beginners</h3>
+                    <p>
+                      Learn basic yoga poses with fun animal names and
+                      easy-to-follow instructions.
+                    </p>
+                    <div class="session-meta">
+                      <span><i class="fas fa-clock"></i> 15 mins</span>
+                      <span><i class="fas fa-child"></i> Ages 5-8</span>
+                    </div>
+                    <a
+                      href="https://www.youtube.com/embed/X655B4ISakg"
+                      class="button is-primary session-button"
+                      data-video-id="X655B4ISakg"
+                    >
+                      <i class="fas fa-play"></i> Start Yoga
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Session 2 -->
+              <div class="column is-6">
+                <div class="yoga-card">
+                  <div class="session-image">
+                    <img
+                      src="https://i.ytimg.com/vi/dL2L0a7pJ4Y/hqdefault.jpg"
+                      alt="Animal Yoga"
+                    />
+                    <div class="play-overlay">
+                      <i class="fas fa-play-circle"></i>
+                    </div>
+                  </div>
+                  <div class="session-content">
+                    <h3>Animal Yoga Safari</h3>
+                    <p>
+                      Pretend to be different animals while learning yoga poses
+                      in this fun adventure!
+                    </p>
+                    <div class="session-meta">
+                      <span><i class="fas fa-clock"></i> 12 mins</span>
+                      <span><i class="fas fa-child"></i> Ages 4-7</span>
+                    </div>
+                    <a
+                      href="https://www.youtube.com/embed/dL2L0a7pJ4Y"
+                      class="button is-primary session-button"
+                      data-video-id="dL2L0a7pJ4Y"
+                    >
+                      <i class="fas fa-play"></i> Start Yoga
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Session 3 -->
+              <div class="column is-6">
+                <div class="yoga-card">
+                  <div class="session-image">
+                    <img
+                      src="https://i.ytimg.com/vi/U9Q6FKDF12w/hqdefault.jpg"
+                      alt="Cosmic Kids Yoga"
+                    />
+                    <div class="play-overlay">
+                      <i class="fas fa-play-circle"></i>
+                    </div>
+                  </div>
+                  <div class="session-content">
+                    <h3>Cosmic Kids Yoga Adventure</h3>
+                    <p>
+                      Join Jaime on a magical yoga adventure that tells a story
+                      through movement.
+                    </p>
+                    <div class="session-meta">
+                      <span><i class="fas fa-clock"></i> 20 mins</span>
+                      <span><i class="fas fa-child"></i> Ages 6-10</span>
+                    </div>
+                    <a
+                      href="https://www.youtube.com/embed/U9Q6FKDF12w"
+                      class="button is-primary session-button"
+                      data-video-id="U9Q6FKDF12w"
+                    >
+                      <i class="fas fa-play"></i> Start Yoga
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Session 4 -->
+              <div class="column is-6">
+                <div class="yoga-card">
+                  <div class="session-image">
+                    <img
+                      src="https://i.ytimg.com/vi/4ZpkRAcgws4/hqdefault.jpg"
+                      alt="Super Yoga"
+                    />
+                    <div class="play-overlay">
+                      <i class="fas fa-play-circle"></i>
+                    </div>
+                  </div>
+                  <div class="session-content">
+                    <h3>Superhero Yoga</h3>
+                    <p>
+                      Feel like a superhero with these powerful yoga poses that
+                      build strength and confidence.
+                    </p>
+                    <div class="session-meta">
+                      <span><i class="fas fa-clock"></i> 10 mins</span>
+                      <span><i class="fas fa-child"></i> Ages 5-9</span>
+                    </div>
+                    <a
+                      href="https://www.youtube.com/embed/4ZpkRAcgws4"
+                      class="button is-primary session-button"
+                      data-video-id="4ZpkRAcgws4"
+                    >
+                      <i class="fas fa-play"></i> Start Yoga
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Session 5 -->
+              <div class="column is-6">
+                <div class="yoga-card">
+                  <div class="session-image">
+                    <img
+                      src="https://i.ytimg.com/vi/caB4X-Sn-vg/hqdefault.jpg"
+                      alt="Yoga Dance"
+                    />
+                    <div class="play-overlay">
+                      <i class="fas fa-play-circle"></i>
+                    </div>
+                  </div>
+                  <div class="session-content">
+                    <h3>Yoga Dance Party</h3>
+                    <p>
+                      Combine yoga poses with fun dance moves in this energetic
+                      session.
+                    </p>
+                    <div class="session-meta">
+                      <span><i class="fas fa-clock"></i> 18 mins</span>
+                      <span><i class="fas fa-child"></i> Ages 7-12</span>
+                    </div>
+                    <a
+                      href="https://www.youtube.com/embed/caB4X-Sn-vg"
+                      class="button is-primary session-button"
+                      data-video-id="caB4X-Sn-vg"
+                    >
+                      <i class="fas fa-play"></i> Start Yoga
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Session 6 -->
+              <div class="column is-6">
+                <div class="yoga-card">
+                  <div class="session-image">
+                    <img
+                      src="https://i.ytimg.com/vi/1aU5a4qYFxY/hqdefault.jpg"
+                      alt="Bedtime Yoga"
+                    />
+                    <div class="play-overlay">
+                      <i class="fas fa-play-circle"></i>
+                    </div>
+                  </div>
+                  <div class="session-content">
+                    <h3>Bedtime Yoga</h3>
+                    <p>
+                      Gentle yoga poses to help you relax and get ready for a
+                      good night's sleep.
+                    </p>
+                    <div class="session-meta">
+                      <span><i class="fas fa-clock"></i> 14 mins</span>
+                      <span><i class="fas fa-child"></i> All Ages</span>
+                    </div>
+                    <a
+                      href="https://www.youtube.com/embed/1aU5a4qYFxY"
+                      class="button is-primary session-button"
+                      data-video-id="1aU5a4qYFxY"
+                    >
+                      <i class="fas fa-play"></i> Start Yoga
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video Modal -->
+          <div class="modal yoga-modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <div class="box">
+                <div class="video-container">
+                  <iframe
+                    id="yoga-video"
+                    width="100%"
+                    height="400"
+                    src=""
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <button
+                  class="modal-close is-large"
+                  aria-label="close"
+                ></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefits Section -->
+          <div class="benefits-section">
+            <h2 class="category-title">Benefits of Yoga for Kids</h2>
+
+            <div class="columns is-multiline">
+              <div class="column is-6">
+                <div class="benefit-card">
+                  <div class="benefit-icon">
+                    <i class="fas fa-brain"></i>
+                  </div>
+                  <h3>Improves Focus</h3>
+                  <p>
+                    Yoga helps children concentrate better in school and during
+                    activities.
+                  </p>
+                </div>
+              </div>
+
+              <div class="column is-6">
+                <div class="benefit-card">
+                  <div class="benefit-icon">
+                    <i class="fas fa-smile"></i>
+                  </div>
+                  <h3>Reduces Anxiety</h3>
+                  <p>
+                    Regular practice helps children manage worries and feel more
+                    calm.
+                  </p>
+                </div>
+              </div>
+
+              <div class="column is-6">
+                <div class="benefit-card">
+                  <div class="benefit-icon">
+                    <i class="fas fa-heart"></i>
+                  </div>
+                  <h3>Emotional Regulation</h3>
+                  <p>
+                    Kids learn to understand and manage their emotions in
+                    healthy ways.
+                  </p>
+                </div>
+              </div>
+
+              <div class="column is-6">
+                <div class="benefit-card">
+                  <div class="benefit-icon">
+                    <i class="fas fa-moon"></i>
+                  </div>
+                  <h3>Better Sleep</h3>
+                  <p>
+                    Yoga can help children relax and fall asleep more easily.
+                  </p>
+                </div>
+              </div>
+
+              <div class="column is-6">
+                <div class="benefit-card">
+                  <div class="benefit-icon">
+                    <i class="fas fa-running"></i>
+                  </div>
+                  <h3>Strength & Flexibility</h3>
+                  <p>
+                    Builds strong muscles and improves flexibility through fun
+                    poses.
+                  </p>
+                </div>
+              </div>
+
+              <div class="column is-6">
+                <div class="benefit-card">
+                  <div class="benefit-icon">
+                    <i class="fas fa-users"></i>
+                  </div>
+                  <h3>Social Skills</h3>
+                  <p>
+                    Group yoga helps children develop teamwork and communication
+                    skills.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Yoga Poses Gallery -->
+          <div class="poses-section">
+            <h2 class="category-title">Fun Yoga Poses to Try</h2>
+
+            <div class="poses-gallery">
+              <div class="pose-card">
+                <div class="pose-image">
+                  <img
+                    src="https://www.yogajournal.com/wp-content/uploads/2021/12/GettyImages-1137957992-Bridge-1.jpg?width=730"
+                    alt="Bridge Pose"
+                  />
+                </div>
+                <div class="pose-content">
+                  <h3>Bridge Pose</h3>
+                  <p>
+                    Lift your hips up high like a bridge! Great for
+                    strengthening your back.
+                  </p>
+                </div>
+              </div>
+
+              <div class="pose-card">
+                <div class="pose-image">
+                  <img
+                    src="https://www.yogajournal.com/wp-content/uploads/2021/12/GettyImages-1137957410-Childs-Pose-1.jpg?width=730"
+                    alt="Child's Pose"
+                  />
+                </div>
+                <div class="pose-content">
+                  <h3>Child's Pose</h3>
+                  <p>
+                    Rest like a little seed getting ready to grow. Perfect for
+                    relaxation.
+                  </p>
+                </div>
+              </div>
+
+              <div class="pose-card">
+                <div class="pose-image">
+                  <img
+                    src="https://www.yogajournal.com/wp-content/uploads/2021/12/GettyImages-1137957422-Tree-Pose-1.jpg?width=730"
+                    alt="Tree Pose"
+                  />
+                </div>
+                <div class="pose-content">
+                  <h3>Tree Pose</h3>
+                  <p>
+                    Stand tall and strong like a tree. Helps with balance and
+                    focus.
+                  </p>
+                </div>
+              </div>
+
+              <div class="pose-card">
+                <div class="pose-image">
+                  <img
+                    src="https://www.yogajournal.com/wp-content/uploads/2021/12/GettyImages-1137957426-Downward-Facing-Dog-1.jpg?width=730"
+                    alt="Downward Dog"
+                  />
+                </div>
+                <div class="pose-content">
+                  <h3>Downward Dog</h3>
+                  <p>
+                    Make an upside-down V shape with your body like a stretching
+                    dog!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <section class="section">
-        <div class="columns">
-            <div class="column">
-                <div class="box">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/X655B4ISakg"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="column">
-                <div class="box">
-                    <p class="subtitle">
-                        7 Benefits of Yoga for Young Kids
-                        Yoga helps children manage their anxiety.
-                        Yoga improves children's emotional regulation.
-                        Yoga boosts children's self-esteem.
-                        Yoga increases children's body awareness and mindfulness.
-                        Yoga enhances children's concentration and memory.
-                        Yoga develops children's strength and flexibility.
+    <footer class="playful-footer">
+      <div class="footer-background">
+        <div class="footer-bubbles" id="footerBubbles"></div>
+        <div class="footer-rainbow"></div>
+      </div>
 
-                    </p>
-                </div>
-            </div>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="index.html">
+            <img
+              src="images/logo.png"
+              alt="Logo"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjUwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0ZXh0IHg9IjE1IiB5PSIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMzMzIj5Mb2dvPC90ZXh0Pjwvc3ZnPg=='"
+            />
+            <span class="logo-sparkle-footer"></span>
+          </a>
         </div>
-    </section>
 
-</body>
+        <div class="footer-links">
+          <a href="index.html" class="footer-link">
+            <span class="link-icon">🏠</span>
+            <span class="link-text">Home</span>
+          </a>
+          <a href="insights.html" class="footer-link">
+            <span class="link-icon">💡</span>
+            <span class="link-text">Insights</span>
+          </a>
+          <a href="activities.html" class="footer-link">
+            <span class="link-icon">🎯</span>
+            <span class="link-text">Activities</span>
+          </a>
+          <a href="quotes.html" class="footer-link">
+            <span class="link-icon">🗣️</span>
+            <span class="link-text">Quotes</span>
+          </a>
+          <a href="tips.html" class="footer-link">
+            <span class="link-icon">💎</span>
+            <span class="link-text">Tips</span>
+          </a>
+        </div>
+
+        <div class="footer-info">
+          <p class="footer-team">
+            <strong>Team Captivators</strong>
+            <br />
+            <a href="http://www.avcoe.org/">
+              Amrutvahini College of Engineering
+            </a>
+            <br />
+            Sangamner, Maharashtra
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script/navbar.js"></script>
+    <script src="script/yoga.js"></script>
+  </body>
+</html>

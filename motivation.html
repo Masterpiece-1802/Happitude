@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Motivation Station</title>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="stylesheet" href="style/motivation.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="style/navbar.css" />
+  </head>
+
+  <body>
+    <nav class="playful-navbar" role="navigation" aria-label="main navigation">
+      <div class="nav-background">
+        <div class="bubble-container" id="bubbleContainer"></div>
+        <div class="nav-rainbow"></div>
+      </div>
+
+      <div class="navbar-container">
+        <div class="navbar-brand">
+          <a class="navbar-item logo-container" href="index.html">
+            <img
+              class="nav-logo"
+              src="images/logo.png"
+              alt="Logo"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjUwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0ZXh0IHg9IjE1IiB5PSIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMzMzIj5Mb2dvPC90ZXh0Pjwvc3ZnPg=='"
+            />
+            <span class="logo-sparkle"></span>
+          </a>
+
+          <button class="playful-burger" id="playfulBurger" aria-label="menu">
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+          </button>
+        </div>
+
+        <div class="navbar-menu playful-menu" id="playfulMenu">
+          <div class="navbar-start">
+            <a class="navbar-item playful-nav-item" href="index.html">
+              <span class="nav-icon">🏠</span>
+              <span class="nav-text">Home</span>
+              <span class="nav-bubble"></span>
+            </a>
+
+            <a class="navbar-item playful-nav-item" href="insights.html">
+              <span class="nav-icon">💡</span>
+              <span class="nav-text">Insights</span>
+              <span class="nav-bubble"></span>
+            </a>
+
+            <a class="navbar-item playful-nav-item" href="activities.html">
+              <span class="nav-icon">🎯</span>
+              <span class="nav-text">Activities</span>
+              <span class="nav-bubble"></span>
+            </a>
+
+            <a class="navbar-item playful-nav-item" href="quotes.html">
+              <span class="nav-icon">🗣️</span>
+              <span class="nav-text">Quotes</span>
+              <span class="nav-bubble"></span>
+            </a>
+
+            <a class="navbar-item playful-nav-item" href="tips.html">
+              <span class="nav-icon">💎</span>
+              <span class="nav-text">Tips</span>
+              <span class="nav-bubble"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-progress"></div>
+    </nav>
+
+    <div class="hero is-fullheight">
+      <!-- Tabs Container -->
+      <div class="tabs-container">
+        <div class="tabs is-centered activity-tabs">
+          <ul>
+            <li><a href="activities.html">Games</a></li>
+            <li><a href="meditation.html">Meditation</a></li>
+            <li><a href="yoga.html">Yoga</a></li>
+            <li class="is-active"><a>Motivation</a></li>
+            <li><a href="music.html">Music</a></li>
+            <li><a href="podcast.html">Podcasts</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-container">
+        <div class="container">
+          <div class="text-center">
+            <h1 class="title main-title">Motivation Station</h1>
+            <div class="subtitle-container">
+              <p class="subtitle motivation-description">
+                Get inspired, stay positive, and discover your inner superhero!
+                Find daily motivation to help you shine bright.
+              </p>
+            </div>
+          </div>
+
+          <!-- Daily Quote Section -->
+          <div class="daily-quote-section">
+            <h2 class="category-title">Quote of the Day</h2>
+            <div class="quote-card">
+              <div class="quote-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <p class="quote-text" id="daily-quote">
+                You are braver than you believe, stronger than you seem, and
+                smarter than you think.
+              </p>
+              <p class="quote-author">- A.A. Milne (Winnie the Pooh)</p>
+              <button class="button is-primary new-quote-btn" id="new-quote">
+                <i class="fas fa-sync-alt"></i> New Quote
+              </button>
+            </div>
+          </div>
+
+          <!-- Motivation Videos -->
+          <div class="motivation-videos">
+            <h2 class="category-title">Inspirational Videos</h2>
+
+            <div class="columns is-multiline">
+              <!-- Video 1 -->
+              <div class="column is-6">
+                <div class="video-card">
+                  <div class="video-image">
+                    <img
+                      src="https://i.ytimg.com/vi/RPalO2K_J6o/hqdefault.jpg"
+                      alt="Inspirational Video"
+                    />
+                    <div class="play-overlay">
+                      <i class="fas fa-play-circle"></i>
+                    </div>
+                  </div>
+                  <div class="video-content">
+                    <h3>Never Give Up</h3>
+                    <p>
+                      An inspiring video about perseverance and believing in
+                      yourself.
+                    </p>
+                    <div class="video-meta">
+                      <span><i class="fas fa-clock"></i> 3 mins</span>
+                      <span><i class="fas fa-heart"></i> Inspiring</span>
+                    </div>
+                    <a
+                      href="https://www.youtube.com/embed/RPalO2K_J6o"
+                      class="button is-primary video-button"
+                      data-video-id="RPalO2K_J6o"
+                    >
+                      <i class="fas fa-play"></i> Watch Now
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Video 2 -->
+              <div class="column is-6">
+                <div class="video-card">
+                  <div class="video-image">
+                    <img
+                      src="https://i.ytimg.com/vi/2m5nWp5oJ0Y/hqdefault.jpg"
+                      alt="Positive Thinking"
+                    />
+                    <div class="play-overlay">
+                      <i class="fas fa-play-circle"></i>
+                    </div>
+                  </div>
+                  <div class="video-content">
+                    <h3>Power of Positive Thinking</h3>
+                    <p>
+                      Learn how positive thoughts can change your day and your
+                      life.
+                    </p>
+                    <div class="video-meta">
+                      <span><i class="fas fa-clock"></i> 4 mins</span>
+                      <span><i class="fas fa-heart"></i> Positive</span>
+                    </div>
+                    <a
+                      href="https://www.youtube.com/embed/2m5nWp5oJ0Y"
+                      class="button is-primary video-button"
+                      data-video-id="2m5nWp5oJ0Y"
+                    >
+                      <i class="fas fa-play"></i> Watch Now
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Video 3 -->
+              <div class="column is-6">
+                <div class="video-card">
+                  <div class="video-image">
+                    <img
+                      src="https://i.ytimg.com/vi/8xjntWcK5_c/hqdefault.jpg"
+                      alt="Dream Big"
+                    />
+                    <div class="play-overlay">
+                      <i class="fas fa-play-circle"></i>
+                    </div>
+                  </div>
+                  <div class="video-content">
+                    <h3>Dream Big</h3>
+                    <p>
+                      Animated story about the importance of having big dreams
+                      and goals.
+                    </p>
+                    <div class="video-meta">
+                      <span><i class="fas fa-clock"></i> 5 mins</span>
+                      <span><i class="fas fa-heart"></i> Dreaming</span>
+                    </div>
+                    <a
+                      href="https://www.youtube.com/embed/8xjntWcK5_c"
+                      class="button is-primary video-button"
+                      data-video-id="8xjntWcK5_c"
+                    >
+                      <i class="fas fa-play"></i> Watch Now
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Video 4 -->
+              <div class="column is-6">
+                <div class="video-card">
+                  <div class="video-image">
+                    <img
+                      src="https://i.ytimg.com/vi/8jPQjjsBbIc/hqdefault.jpg"
+                      alt="Be Kind"
+                    />
+                    <div class="play-overlay">
+                      <i class="fas fa-play-circle"></i>
+                    </div>
+                  </div>
+                  <div class="video-content">
+                    <h3>The Power of Kindness</h3>
+                    <p>
+                      How small acts of kindness can make a big difference in
+                      the world.
+                    </p>
+                    <div class="video-meta">
+                      <span><i class="fas fa-clock"></i> 6 mins</span>
+                      <span><i class="fas fa-heart"></i> Kindness</span>
+                    </div>
+                    <a
+                      href="https://www.youtube.com/embed/8jPQjjsBbIc"
+                      class="button is-primary video-button"
+                      data-video-id="8jPQjjsBbIc"
+                    >
+                      <i class="fas fa-play"></i> Watch Now
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video Modal -->
+          <div class="modal motivation-modal">
+            <div class="modal-background"></div>
+            <div class="modal-content">
+              <div class="box">
+                <div class="video-container">
+                  <iframe
+                    id="motivation-video"
+                    width="100%"
+                    height="400"
+                    src=""
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <button
+                  class="modal-close is-large"
+                  aria-label="close"
+                ></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Challenge Section -->
+          <div class="challenge-section">
+            <h2 class="category-title">Daily Challenges</h2>
+
+            <div class="challenges-grid">
+              <div class="challenge-card">
+                <div class="challenge-icon">
+                  <i class="fas fa-hands-helping"></i>
+                </div>
+                <h3>Help Someone</h3>
+                <p>Do something kind for someone without being asked.</p>
+                <div class="challenge-check">
+                  <label class="checkbox">
+                    <input type="checkbox" />
+                    I did it!
+                  </label>
+                </div>
+              </div>
+
+              <div class="challenge-card">
+                <div class="challenge-icon">
+                  <i class="fas fa-smile"></i>
+                </div>
+                <h3>Smile at 5 People</h3>
+                <p>Share your smile - it's contagious!</p>
+                <div class="challenge-check">
+                  <label class="checkbox">
+                    <input type="checkbox" />
+                    I did it!
+                  </label>
+                </div>
+              </div>
+
+              <div class="challenge-card">
+                <div class="challenge-icon">
+                  <i class="fas fa-book"></i>
+                </div>
+                <h3>Learn Something New</h3>
+                <p>Discover one interesting fact today.</p>
+                <div class="challenge-check">
+                  <label class="checkbox">
+                    <input type="checkbox" />
+                    I did it!
+                  </label>
+                </div>
+              </div>
+
+              <div class="challenge-card">
+                <div class="challenge-icon">
+                  <i class="fas fa-star"></i>
+                </div>
+                <h3>Try Your Best</h3>
+                <p>Give 100% effort on one task today.</p>
+                <div class="challenge-check">
+                  <label class="checkbox">
+                    <input type="checkbox" />
+                    I did it!
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Achievement Badges -->
+          <div class="badges-section">
+            <h2 class="category-title">Earn Badges</h2>
+
+            <div class="badges-grid">
+              <div class="badge-card" data-badge="kindness">
+                <div class="badge-icon">
+                  <i class="fas fa-heart"></i>
+                </div>
+                <h3>Kindness Champion</h3>
+                <p>Complete 5 kind acts</p>
+                <div class="badge-progress">
+                  <progress class="progress is-primary" value="2" max="5">
+                    40%
+                  </progress>
+                  <span>2/5</span>
+                </div>
+              </div>
+
+              <div class="badge-card" data-badge="effort">
+                <div class="badge-icon">
+                  <i class="fas fa-trophy"></i>
+                </div>
+                <h3>Best Effort</h3>
+                <p>Try your best for 7 days</p>
+                <div class="badge-progress">
+                  <progress class="progress is-primary" value="4" max="7">
+                    57%
+                  </progress>
+                  <span>4/7</span>
+                </div>
+              </div>
+
+              <div class="badge-card" data-badge="learning">
+                <div class="badge-icon">
+                  <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Curious Mind</h3>
+                <p>Learn 10 new things</p>
+                <div class="badge-progress">
+                  <progress class="progress is-primary" value="6" max="10">
+                    60%
+                  </progress>
+                  <span>6/10</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Positive Affirmations -->
+          <div class="affirmations-section">
+            <h2 class="category-title">Positive Affirmations</h2>
+
+            <div class="affirmation-carousel">
+              <div class="affirmation active">
+                <p>I am capable of amazing things</p>
+              </div>
+              <div class="affirmation">
+                <p>My challenges help me grow</p>
+              </div>
+              <div class="affirmation">
+                <p>I choose to be happy today</p>
+              </div>
+              <div class="affirmation">
+                <p>I am a good friend</p>
+              </div>
+              <div class="affirmation">
+                <p>I believe in myself</p>
+              </div>
+            </div>
+            <div class="carousel-controls">
+              <button class="button is-light prev-btn">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="button is-light next-btn">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="playful-footer">
+      <div class="footer-background">
+        <div class="footer-bubbles" id="footerBubbles"></div>
+        <div class="footer-rainbow"></div>
+      </div>
+
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="index.html">
+            <img
+              src="images/logo.png"
+              alt="Logo"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjUwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0ZXh0IHg9IjE1IiB5PSIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMzMzIj5Mb2dvPC90ZXh0Pjwvc3ZnPg=='"
+            />
+            <span class="logo-sparkle-footer"></span>
+          </a>
+        </div>
+
+        <div class="footer-links">
+          <a href="index.html" class="footer-link">
+            <span class="link-icon">🏠</span>
+            <span class="link-text">Home</span>
+          </a>
+          <a href="insights.html" class="footer-link">
+            <span class="link-icon">💡</span>
+            <span class="link-text">Insights</span>
+          </a>
+          <a href="activities.html" class="footer-link">
+            <span class="link-icon">🎯</span>
+            <span class="link-text">Activities</span>
+          </a>
+          <a href="quotes.html" class="footer-link">
+            <span class="link-icon">🗣️</span>
+            <span class="link-text">Quotes</span>
+          </a>
+          <a href="tips.html" class="footer-link">
+            <span class="link-icon">💎</span>
+            <span class="link-text">Tips</span>
+          </a>
+        </div>
+
+        <div class="footer-info">
+          <p class="footer-team">
+            <strong>Team Captivators</strong>
+            <br />
+            <a href="http://www.avcoe.org/">
+              Amrutvahini College of Engineering
+            </a>
+            <br />
+            Sangamner, Maharashtra
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script/navbar.js"></script>
+
+    <script src="script/motivation.js"></script>
+  </body>
+</html>

@@ -1,107 +1,342 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>login</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Student Registration</title>
+    <link rel="icon" href="images/logo.png" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
     <script type="module" src="script/login.js"></script>
-  <style>
-    body{
+    <style>
+      body {
         background-image: url("images/1183596.jpg");
-    }
-  </style>  
-</head>
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1rem;
+        margin: 0;
+      }
 
-<body>
-    <section class="section">
-        <audio autoplay >
-            <source src="audio/music.mpeg" type="audio/mpeg">
-        </audio>
-        <div class="columns is-centered">
-            <div class="column is-centered is-four-fifths-tablet is-three-quarters-desktop is-half-fullhd">
-                <h1 class="title has-text-centered">
-                    Details
-                </h1>
-                <p class="subtitle has-text-centered mt-6">
-                    Please enter the following details to continue
-                </p>
+      .compact-form {
+        max-height: 85vh;
+        overflow: hidden;
+      }
 
-                <div class="notification mt-1">
-                    <div class="field">
-                        <label class="label">Name</label>
-                        <p class="control has-icons-left has-icons-right">
-                            <input id="input-name" class="input" type="text" placeholder="Your name">
-                            <span class="icon is-small is-left">
-                                <i class="fas fa-user"></i>
-                            </span>
-                        <p id="help-name" class="help is-danger is-hidden">Please enter your name</p>
-                        </p>
-                    </div>
+      .card {
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        margin: 0 auto;
+        max-width: 500px;
+      }
 
-                    <div class="field">
-                        <label class="label">E-mail</label>
-                        <p class="control has-icons-left has-icons-right">
-                            <input id="input-email" class="input" type="email" placeholder="Your email">
-                            <span class="icon is-small is-left">
-                                <i class="fas fa-envelope"></i>
-                            </span>
-                        <p id="help-email" class="help is-danger is-hidden">Please enter your e-mail</p>
-                        </p>
-                    </div>
-                    <div class="field">
-                        <label class="label">School</label>
-                        <p class="control has-icons-left has-icons-right">
-                            <input id="input-school" class="input" type="text" placeholder="Your school name">
-                            <!-- <span class="icon is-small is-left">
-                                <i class="fas fa-user"></i>
-                            </span> -->
-                        <p id="help-name" class="help is-danger is-hidden">Please enter your school name</p>
-                        </p>
-                    </div>
+      .card:hover {
+        transform: translateY(-3px);
+      }
 
-                    <div class="dropdown-divider mt-5 mb-5"></div>
-                    <div class="field">
-                        <label class="label">Class</label>
-                        <div class="select">
-                            <select id="select-class">
-                                <option data-default="true">Select your Class</option>
-                            </select>
-                        </div>
-                        <p id="help-class" class="help is-danger is-hidden">Please select a class</p>
-                    </div>
+      .card-header {
+        background: linear-gradient(135deg, #48c78e 0%, #3e8ed0 100%);
+        padding: 1rem 1.5rem;
+      }
 
-                    <div class="columns">
-                        <div class="field column">
-                            <label class="label">State</label>
-                            <div class="select">
-                                <select id="select-state">
-                                    <option data-default="true">Select your state</option>
-                                </select>
-                            </div>
-                            <p id="help-state" class="help is-danger is-hidden">Please select a state</p>
-                        </div>
+      .title {
+        color: white;
+        font-weight: 700;
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem !important;
+      }
 
-                        <div id="district-box" class="field column is-hidden">
-                            <label class="label">District</label>
-                            <div class="select">
-                                <select id="select-district">
-                                    <option data-default="true">Select your district</option>
-                                </select>
-                            </div>
-                            <p id="help-district" class="help is-danger is-hidden">Please select a district</p>
-                        </div>
-                    </div>
+      .subtitle {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.9rem;
+        margin-top: 0.5rem !important;
+      }
 
-                    <button id="login-button" class="button is-success">Next</button>
+      .notification {
+        border-radius: 8px;
+        padding: 1.25rem;
+      }
+
+      .input,
+      .select select {
+        border-radius: 5px;
+        font-size: 0.9rem;
+        padding: 0.5rem 0.75rem;
+        height: 2.5em;
+      }
+
+      .select:not(.is-multiple):not(.is-loading)::after {
+        border-color: #48c78e;
+        margin-top: -0.275em;
+        right: 1.125em;
+      }
+
+      .input:focus,
+      .select select:focus {
+        box-shadow: 0 0 0 0.125em rgba(72, 199, 142, 0.25);
+        border-color: #48c78e;
+      }
+
+      .button {
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+      }
+
+      .button.is-success {
+        background: linear-gradient(135deg, #48c78e 0%, #3e8ed0 100%);
+      }
+
+      .back-button {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        z-index: 10;
+        font-size: 0.8rem;
+        padding: 0.4rem 0.75rem;
+      }
+
+      .dropdown-divider {
+        background: linear-gradient(
+          to right,
+          transparent,
+          #dbdbdb,
+          transparent
+        );
+        height: 1px;
+        margin: 0.75rem 0;
+      }
+
+      .field {
+        margin-bottom: 0.75rem;
+      }
+
+      .label {
+        font-size: 0.9rem;
+        margin-bottom: 0.4rem;
+      }
+
+      .help {
+        font-size: 0.75rem;
+        margin-top: 0.25rem;
+      }
+
+      .has-icons-left .icon {
+        height: 2.5em;
+        width: 2.5em;
+        color: #48c78e;
+      }
+
+      .columns {
+        margin-bottom: 0.5rem;
+      }
+
+      .fade-in {
+        animation: fadeIn 0.6s ease forwards;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media screen and (max-height: 700px) {
+        .compact-form {
+          transform: scale(0.9);
+          transform-origin: center center;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <a href="index.html" class="back-button button is-light">
+      <span class="icon is-small">
+        <i class="fas fa-arrow-left"></i>
+      </span>
+      <span>Home</span>
+    </a>
+
+    <section class="section compact-form" style="padding: 1rem">
+      <audio autoplay loop>
+        <source src="audio/music.mpeg" type="audio/mpeg" />
+      </audio>
+
+      <div class="columns is-centered is-mobile">
+        <div
+          class="column is-four-fifths-mobile is-three-quarters-tablet is-half-desktop"
+        >
+          <div class="card fade-in">
+            <header class="card-header has-text-centered">
+              <div
+                class="card-header-title is-centered is-flex-direction-column py-2"
+              >
+                <h1 class="title is-4">Student Registration</h1>
+                <p class="subtitle is-7">Enter your details to continue</p>
+              </div>
+            </header>
+
+            <div class="card-content p-2">
+              <div class="notification is-light py-3">
+                <div class="field">
+                  <label class="label">Name</label>
+                  <div class="control has-icons-left">
+                    <input
+                      id="input-name"
+                      class="input"
+                      type="text"
+                      placeholder="Full name"
+                    />
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-user"></i>
+                    </span>
+                  </div>
+                  <p id="help-name" class="help is-danger is-hidden">
+                    Please enter your name
+                  </p>
                 </div>
-            </div>
-        </div>
-    </section>
-</body>
 
+                <div class="field">
+                  <label class="label">E-mail</label>
+                  <div class="control has-icons-left">
+                    <input
+                      id="input-email"
+                      class="input"
+                      type="email"
+                      placeholder="Email address"
+                    />
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                  </div>
+                  <p id="help-email" class="help is-danger is-hidden">
+                    Please enter a valid e-mail
+                  </p>
+                </div>
+
+                <div class="field">
+                  <label class="label">School</label>
+                  <div class="control has-icons-left">
+                    <input
+                      id="input-school"
+                      class="input"
+                      type="text"
+                      placeholder="School name"
+                    />
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-school"></i>
+                    </span>
+                  </div>
+                  <p id="help-school" class="help is-danger is-hidden">
+                    Please enter your school name
+                  </p>
+                </div>
+
+                <div class="dropdown-divider"></div>
+
+                <div class="field">
+                  <label class="label">Class</label>
+                  <div class="control">
+                    <div class="select is-fullwidth">
+                      <select id="select-class">
+                        <option data-default="true">Select your Class</option>
+                      </select>
+                    </div>
+                  </div>
+                  <p id="help-class" class="help is-danger is-hidden">
+                    Please select a class
+                  </p>
+                </div>
+
+                <div class="columns is-mobile is-multiline">
+                  <div class="field column is-half">
+                    <label class="label">State</label>
+                    <div class="control">
+                      <div class="select is-fullwidth">
+                        <select id="select-state">
+                          <option data-default="true">Select your state</option>
+                        </select>
+                      </div>
+                    </div>
+                    <p id="help-state" class="help is-danger is-hidden">
+                      Please select a state
+                    </p>
+                  </div>
+
+                  <div id="district-box" class="field column is-half is-hidden">
+                    <label class="label">District</label>
+                    <div class="control">
+                      <div class="select is-fullwidth">
+                        <select id="select-district">
+                          <option data-default="true">
+                            Select your district
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <p id="help-district" class="help is-danger is-hidden">
+                      Please select a district
+                    </p>
+                  </div>
+                </div>
+
+                <div class="field mt-3">
+                  <div class="control">
+                    <button
+                      id="login-button"
+                      class="button is-success is-fullwidth"
+                    >
+                      <span>Continue</span>
+                      <span class="icon is-small">
+                        <i class="fas fa-arrow-right"></i>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Add subtle hover effects to inputs
+        const inputs = document.querySelectorAll(".input, .select select");
+        inputs.forEach((input) => {
+          input.addEventListener("focus", () => {
+            input.parentElement.parentElement.classList.add("has-shadow");
+          });
+          input.addEventListener("blur", () => {
+            input.parentElement.parentElement.classList.remove("has-shadow");
+          });
+        });
+      });
+    </script>
+  </body>
 </html>
