@@ -1,2 +1,2 @@
-# Happitude
-A web application self assessment tool to assess mental well-being of children.
+# happiness_test
+A project for the SIH
