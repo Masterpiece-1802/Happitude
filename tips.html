@@ -1,168 +1,711 @@
+<!DOCTYPE html>
 <html class="has-navbar-fixed-top">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tips & Tricks</title>
+    <link rel="icon" type="image/png" href="images/logo.png" />
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style/tips.css" />
 
-    <link rel="stylesheet" href="style/index.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-    <script type='text/javascript' src='script/index.js'></script>
-</head>
+    <link rel="stylesheet" href="style/navbar.css" />
+  </head>
 
-<body>
-    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <body>
+    <nav class="playful-navbar" role="navigation" aria-label="main navigation">
+      <div class="nav-background">
+        <div class="bubble-container" id="bubbleContainer"></div>
+        <div class="nav-rainbow"></div>
+      </div>
+
+      <div class="navbar-container">
         <div class="navbar-brand">
-            <a class="navbar-item">
-                <img class="is-large" src="images/logo.png">
-            </a>
-            <a class="navbar-item" href="index.html">
-                Home
+          <a class="navbar-item logo-container" href="index.html">
+            <img
+              class="nav-logo"
+              src="images/logo.png"
+              alt="Logo"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjUwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0ZXh0IHg9IjE1IiB5PSIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMzMzIj5Mb2dvPC90ZXh0Pjwvc3ZnPg=='"
+            />
+            <span class="logo-sparkle"></span>
+          </a>
+
+          <button class="playful-burger" id="playfulBurger" aria-label="menu">
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+          </button>
+        </div>
+
+        <div class="navbar-menu playful-menu" id="playfulMenu">
+          <div class="navbar-start">
+            <a class="navbar-item playful-nav-item" href="index.html">
+              <span class="nav-icon">🏠</span>
+              <span class="nav-text">Home</span>
+              <span class="nav-bubble"></span>
             </a>
 
-            <a class="navbar-item" href="insights.html">
-                Insights
+            <a class="navbar-item playful-nav-item" href="insights.html">
+              <span class="nav-icon">💡</span>
+              <span class="nav-text">Insights</span>
+              <span class="nav-bubble"></span>
             </a>
-            <a class="navbar-item" href="activities.html">
-                Activities
+
+            <a class="navbar-item playful-nav-item" href="activities.html">
+              <span class="nav-icon">🎯</span>
+              <span class="nav-text">Activities</span>
+              <span class="nav-bubble"></span>
             </a>
-            <a class="navbar-item" href="quotes.html">
-                Quotes
+
+            <a class="navbar-item playful-nav-item" href="quotes.html">
+              <span class="nav-icon">🗣️</span>
+              <span class="nav-text">Quotes</span>
+              <span class="nav-bubble"></span>
             </a>
-            <a class="navbar-item" href="tips.html">
-                Tips
+
+            <a class="navbar-item playful-nav-item" href="tips.html">
+              <span class="nav-icon">💎</span>
+              <span class="nav-text">Tips</span>
+              <span class="nav-bubble"></span>
             </a>
+          </div>
         </div>
-        </div>
+      </div>
+
+      <div class="nav-progress"></div>
     </nav>
+
     <div class="hero is-fullheight">
-        <section class="section ">
-            <div class="card-container">
-                <div class="columns">
-                <div class="column">
-                   <div class="box">
-                    <h1 class="subtitle">Positive Thinking:</h1>
-                    Say these phrases to yourselfevery morning.
-                    <p class="message-body">
-                        I am strong.
-                    </p>
-                    <p class="message-body">
-                        I am awesome.
+      <div class="hero-body">
+        <div class="container">
+          <div class="header-decoration">
+            <div class="decoration-star">⭐</div>
+            <h1 class="title has-text-centered main-title">
+              Fun for Awesome Kids!
+            </h1>
+            <div class="decoration-star">🌟</div>
+          </div>
 
-                    </p>
-                    <p class="message-body">
-                        I am powerful.
-                    </p>
-                    <p class="message-body">
-                      I am Smart.
-                    </p>
-                    <p class="message-body">
-                        I am brave.
-                    </p>
-                   </div>
-                   <div class="box">
-                    <h1 class="subtitle">Drink Water:</h1>
-                    <p class="message-body">
-                        Not drinking enough water can lead to headaches,sleepiness, and a loss of strength, so make sure to drink 5 to 7 cups of water a day!
-                    </p>
-                    
-
-                    
-                </div>
-                <div class="box">
-                    <h1 class="subtitle">Positive Thinking:</h1>
-                    Say these phrases to yourselfevery morning.
-                    <p class="message-body">
-                        I am strong.
-                    </p>
-                    <p class="message-body">
-                        I am awesome.
-
-                    </p>
-                    <p class="message-body">
-                        I am powerful.
-                    </p>
-                    <p class="message-body">
-                      I am Smart.
-                    </p>
-                    <p class="message-body">
-                        I am brave.
-                    </p>
-                   </div>
-                   
-                </div>
-                <div class="column">
-                    <div class="box">
-                        <h1 class="subtitle">Exercising:</h1>
-                        Sweat and Smile.
-                    
-                    <p class="message-body">
-                        Jump roping.
-                    </p>
-                    <p class="message-body">
-                        Jumping Jacks.
-
-                    </p>
-                    <p class="message-body">
-                        Running.
-                    </p>
-                    <p class="message-body">
-                      Running in place.
-                    </p>
-                    <p class="message-body">
-                        Push-ups.
-                    </p>
-                        
+          <div class="tab-content">
+            <!-- Positive Thinking Tab -->
+            <div class="tab-pane is-active" id="positive">
+              <div class="columns is-multiline">
+                <div class="column is-half">
+                  <div class="box tip-card">
+                    <div class="card-header">
+                      <h2 class="subtitle">Morning Power Phrases! 🌅</h2>
+                      <button
+                        class="button is-small play-audio"
+                        data-audio="morning"
+                      >
+                        <span class="icon"><i class="fas fa-play"></i></span>
+                      </button>
                     </div>
-                    <div class="box">
-                        <h1 class="subtitle">Have a healthy snack:</h1>
-                        
-                        <p class="message-body">
-                            Whole-grain Crackers.
-                        </p>
-                        <p class="message-body">
-                            Silced Apple.
-    
-                        </p>
-                        <p class="message-body">
-                            Trail Mix.
-                        </p>
-                        <p class="message-body">
-                          Berries.
-                        </p>
-                        <p class="message-body">
-                            Yogurt.
-                        </p>
+                    <p class="message-body">
+                      Say these every morning to start your day with power!
+                    </p>
+                    <div class="affirmations">
+                      <div class="affirmation">I am strong. 💪</div>
+                      <div class="affirmation">I am awesome. 😎</div>
+                      <div class="affirmation">I am powerful. ⚡</div>
+                      <div class="affirmation">I am smart. 🧠</div>
+                      <div class="affirmation">I am brave. 🦸‍♂️</div>
                     </div>
+                    <button class="button is-fullwidth is-info shuffle-btn">
+                      <span class="icon"><i class="fas fa-random"></i></span>
+                      <span>Shuffle Affirmations</span>
+                    </button>
+                  </div>
+                </div>
 
+                <div class="column is-half">
+                  <div class="box tip-card">
+                    <h2 class="subtitle">Positive Action Challenge 🌟</h2>
+                    <p class="message-body">
+                      Do one of these every day to spread positivity!
+                    </p>
+                    <div class="actions">
+                      <div class="action-item">Compliment a friend 👏</div>
+                      <div class="action-item">
+                        Help someone without being asked 🤝
+                      </div>
+                      <div class="action-item">
+                        Say thank you to three people 🙏
+                      </div>
+                      <div class="action-item">
+                        Draw a happy picture for someone 🎨
+                      </div>
+                      <div class="action-item">
+                        Share something with a friend 🧩
+                      </div>
+                    </div>
+                    <div class="progress-container">
+                      <progress class="progress is-success" value="0" max="5">
+                        0%
+                      </progress>
+                      <p class="has-text-centered">
+                        <span id="progress-count">0</span>/5 days of positive
+                        actions!
+                      </p>
+                      <button
+                        class="button is-small is-fullwidth reset-progress mt-2"
+                      >
+                        Reset Progress
+                      </button>
+                    </div>
+                  </div>
+                </div>
 
+                <div class="column is-full">
+                  <div class="box tip-card">
+                    <h2 class="subtitle">Positive Thought of the Day 💭</h2>
+                    <div class="thought-container">
+                      <p id="daily-thought">
+                        Click the button to get a positive thought!
+                      </p>
+                      <button class="button is-info" id="new-thought">
+                        <span class="icon"
+                          ><i class="fas fa-sync-alt"></i
+                        ></span>
+                        <span>New Thought</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                    <div class="box">
-                        
-                    <h1 class="subtitle">Journaling Prompts:</h1>
+            <!-- Health & Fitness Tab -->
+            <div class="tab-pane" id="health">
+              <div class="columns is-multiline">
+                <div class="column is-half">
+                  <div class="box tip-card">
+                    <h2 class="subtitle">💧 Water Reminder</h2>
                     <p class="message-body">
-                        Describe the happiest day of your life.
+                      Not drinking enough water can make you tired! Goal: 5-7
+                      cups daily.
                     </p>
-                    <p class="message-body">
-                        What is one thing you would like to be better at?
+                    <div class="water-tracker">
+                      <div class="cups-container">
+                        <div class="cup" data-number="1"><span>1</span></div>
+                        <div class="cup" data-number="2"><span>2</span></div>
+                        <div class="cup" data-number="3"><span>3</span></div>
+                        <div class="cup" data-number="4"><span>4</span></div>
+                        <div class="cup" data-number="5"><span>5</span></div>
+                        <div class="cup" data-number="6"><span>6</span></div>
+                        <div class="cup" data-number="7"><span>7</span></div>
+                      </div>
+                      <button class="button is-info is-fullwidth add-water">
+                        <span class="icon"><i class="fas fa-plus"></i></span>
+                        <span>I Drank a Cup!</span>
+                      </button>
+                      <button
+                        class="button is-text is-small is-fullwidth reset-water mt-2"
+                      >
+                        Reset Water Tracker
+                      </button>
+                    </div>
+                  </div>
+                </div>
 
-                    </p>
+                <div class="column is-half">
+                  <div class="box tip-card">
+                    <h2 class="subtitle">🏃‍♂️ Fun Exercises</h2>
                     <p class="message-body">
-                        Describe yourself in 10 words.
+                      Get moving with these fun activities!
                     </p>
+                    <div class="exercises">
+                      <div class="exercise">
+                        <span class="icon"><i class="fas fa-running"></i></span>
+                        <span>Jump roping</span>
+                      </div>
+                      <div class="exercise">
+                        <span class="icon"><i class="fas fa-star"></i></span>
+                        <span>Jumping Jacks</span>
+                      </div>
+                      <div class="exercise">
+                        <span class="icon"><i class="fas fa-wind"></i></span>
+                        <span>Running</span>
+                      </div>
+                      <div class="exercise">
+                        <span class="icon"><i class="fas fa-running"></i></span>
+                        <span>Running in place</span>
+                      </div>
+                      <div class="exercise">
+                        <span class="icon"><i class="fas fa-fire"></i></span>
+                        <span>Push-ups</span>
+                      </div>
+                    </div>
+                    <div class="exercise-timer">
+                      <h3 class="is-size-5">5-Minute Exercise Challenge ⏱️</h3>
+                      <div class="timer-display">05:00</div>
+                      <button class="button is-success start-timer">
+                        <span class="icon"><i class="fas fa-play"></i></span>
+                        <span>Start Timer</span>
+                      </button>
+                      <button class="button is-danger reset-timer ml-2">
+                        <span class="icon"><i class="fas fa-redo"></i></span>
+                        <span>Reset</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column is-full">
+                  <div class="box tip-card">
+                    <h2 class="subtitle">Sleep Tracker 😴</h2>
                     <p class="message-body">
-                        What are three things you are grateful for?
+                      Kids need 9-12 hours of sleep each night!
                     </p>
+                    <div class="sleep-tracker">
+                      <div class="field">
+                        <label class="label"
+                          >What time did you go to bed?</label
+                        >
+                        <div class="control">
+                          <input class="input" type="time" id="bedtime" />
+                        </div>
+                      </div>
+                      <div class="field">
+                        <label class="label">What time did you wake up?</label>
+                        <div class="control">
+                          <input class="input" type="time" id="waketime" />
+                        </div>
+                      </div>
+                      <button class="button is-info" id="calculate-sleep">
+                        Calculate My Sleep
+                      </button>
+                      <div class="sleep-result mt-3" id="sleep-result"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Healthy Snacks Tab -->
+            <div class="tab-pane" id="food">
+              <div class="columns is-multiline">
+                <div class="column is-half">
+                  <div class="box tip-card">
+                    <h2 class="subtitle">🍎 Yummy Healthy Snacks</h2>
                     <p class="message-body">
-                        Describe the happiest day of your life.
+                      Try these delicious and healthy snacks!
                     </p>
-                    
-            </div>   
+                    <div class="snacks">
+                      <div class="snack">
+                        <div class="snack-image">
+                          <div class="image-placeholder">🍪</div>
+                        </div>
+                        <div class="snack-info">
+                          <h4>Whole-grain Crackers</h4>
+                          <p>Great with cheese or peanut butter!</p>
+                        </div>
+                      </div>
+                      <div class="snack">
+                        <div class="snack-image">
+                          <div class="image-placeholder">🍎</div>
+                        </div>
+                        <div class="snack-info">
+                          <h4>Sliced Apple</h4>
+                          <p>Sweet, crunchy, and delicious!</p>
+                        </div>
+                      </div>
+                      <div class="snack">
+                        <div class="snack-image">
+                          <div class="image-placeholder">🥜</div>
+                        </div>
+                        <div class="snack-info">
+                          <h4>Trail Mix</h4>
+                          <p>Nuts, seeds, and dried fruit mix!</p>
+                        </div>
+                      </div>
+                      <div class="snack">
+                        <div class="snack-image">
+                          <div class="image-placeholder">🍓</div>
+                        </div>
+                        <div class="snack-info">
+                          <h4>Berries</h4>
+                          <p>Strawberries, blueberries, raspberries!</p>
+                        </div>
+                      </div>
+                      <div class="snack">
+                        <div class="snack-image">
+                          <div class="image-placeholder">🥛</div>
+                        </div>
+                        <div class="snack-info">
+                          <h4>Yogurt</h4>
+                          <p>Add some fruit for extra flavor!</p>
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      class="button is-fullwidth is-info mt-3"
+                      id="random-snack"
+                    >
+                      <span class="icon"><i class="fas fa-random"></i></span>
+                      <span>Suggest a Random Snack</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="column is-half">
+                  <div class="box tip-card">
+                    <h2 class="subtitle">🌈 Eat the Rainbow</h2>
+                    <p class="message-body">
+                      Try to eat fruits and vegetables of different colors every
+                      day!
+                    </p>
+                    <div class="rainbow-chart">
+                      <div class="color-item red">
+                        <span class="color-dot"></span>
+                        <span>Red: Apples, Strawberries</span>
+                      </div>
+                      <div class="color-item orange">
+                        <span class="color-dot"></span>
+                        <span>Orange: Oranges, Carrots</span>
+                      </div>
+                      <div class="color-item yellow">
+                        <span class="color-dot"></span>
+                        <span>Yellow: Bananas, Corn</span>
+                      </div>
+                      <div class="color-item green">
+                        <span class="color-dot"></span>
+                        <span>Green: Broccoli, Grapes</span>
+                      </div>
+                      <div class="color-item blue">
+                        <span class="color-dot"></span>
+                        <span>Blue/Purple: Blueberries, Plums</span>
+                      </div>
+                    </div>
+                    <div class="rainbow-tracker">
+                      <h3 class="is-size-5">Today I ate these colors:</h3>
+                      <div class="color-selector">
+                        <span class="color-option red" data-color="red"></span>
+                        <span
+                          class="color-option orange"
+                          data-color="orange"
+                        ></span>
+                        <span
+                          class="color-option yellow"
+                          data-color="yellow"
+                        ></span>
+                        <span
+                          class="color-option green"
+                          data-color="green"
+                        ></span>
+                        <span
+                          class="color-option blue"
+                          data-color="blue"
+                        ></span>
+                      </div>
+                      <div class="achievement-badge mt-3" id="rainbow-badge">
+                        <span class="icon">🌈</span>
+                        <span>Rainbow Eater!</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column is-full">
+                  <div class="box tip-card">
+                    <h2 class="subtitle">Fun Food Facts 🍽️</h2>
+                    <div class="food-facts">
+                      <div class="food-fact active">
+                        <p>Carrots were originally purple, not orange!</p>
+                      </div>
+                      <div class="food-fact">
+                        <p>
+                          Strawberries are the only fruit with seeds on the
+                          outside.
+                        </p>
+                      </div>
+                      <div class="food-fact">
+                        <p>Apples float in water because they are 25% air!</p>
+                      </div>
+                      <div class="food-fact">
+                        <p>Broccoli is actually a flower!</p>
+                      </div>
+                    </div>
+                    <button
+                      class="button is-info is-fullwidth mt-3"
+                      id="next-fact"
+                    >
+                      Next Fun Fact
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Journaling Tab -->
+            <div class="tab-pane" id="journal">
+              <div class="columns">
+                <div class="column">
+                  <div class="box tip-card">
+                    <h2 class="subtitle">📝 Journaling Prompts</h2>
+                    <p class="message-body">
+                      Answer these fun questions in your journal!
+                    </p>
+                    <div class="prompts">
+                      <div class="prompt">
+                        <p>Describe the happiest day of your life.</p>
+                        <button class="button is-small is-info prompt-btn">
+                          I did this!
+                        </button>
+                      </div>
+                      <div class="prompt">
+                        <p>What is one thing you would like to be better at?</p>
+                        <button class="button is-small is-info prompt-btn">
+                          I did this!
+                        </button>
+                      </div>
+                      <div class="prompt">
+                        <p>Describe yourself in 10 words.</p>
+                        <button class="button is-small is-info prompt-btn">
+                          I did this!
+                        </button>
+                      </div>
+                      <div class="prompt">
+                        <p>What are three things you are grateful for?</p>
+                        <button class="button is-small is-info prompt-btn">
+                          I did this!
+                        </button>
+                      </div>
+                      <div class="prompt">
+                        <p>
+                          If you could have any superpower, what would it be?
+                        </p>
+                        <button class="button is-small is-info prompt-btn">
+                          I did this!
+                        </button>
+                      </div>
+                    </div>
+                    <button class="button is-fullwidth is-info shuffle-prompts">
+                      <span class="icon"><i class="fas fa-random"></i></span>
+                      <span>Get New Prompts</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="box tip-card">
+                    <h2 class="subtitle">🎨 Draw Your Feelings</h2>
+                    <p class="message-body">
+                      Sometimes drawing can help express how you feel!
+                    </p>
+                    <div class="drawing-area">
+                      <canvas
+                        id="drawingCanvas"
+                        width="300"
+                        height="200"
+                      ></canvas>
+                      <div class="drawing-controls">
+                        <button class="button is-small is-danger clear-canvas">
+                          <span class="icon"><i class="fas fa-trash"></i></span>
+                          <span>Clear</span>
+                        </button>
+                        <div class="color-picker">
+                          <span
+                            class="color-choice red"
+                            data-color="#ff3860"
+                          ></span>
+                          <span
+                            class="color-choice blue"
+                            data-color="#3273dc"
+                          ></span>
+                          <span
+                            class="color-choice green"
+                            data-color="#23d160"
+                          ></span>
+                          <span
+                            class="color-choice yellow"
+                            data-color="#ffdd57"
+                          ></span>
+                          <span
+                            class="color-choice purple"
+                            data-color="#9b59b6"
+                          ></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="emotion-guide">
+                      <h3 class="is-size-5">Color Feelings Guide</h3>
+                      <p>
+                        Red = Energy, Blue = Calm, Green = Peace, Yellow =
+                        Happiness, Purple = Creativity
+                      </p>
+                    </div>
+                    <button
+                      class="button is-info is-fullwidth mt-3"
+                      id="save-drawing"
+                    >
+                      <span class="icon"><i class="fas fa-save"></i></span>
+                      <span>Save My Drawing</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fun Games Tab -->
+            <div class="tab-pane" id="games">
+              <div class="columns is-multiline">
+                <div class="column is-half">
+                  <div class="box tip-card">
+                    <h2 class="subtitle">Memory Game 🧠</h2>
+                    <p class="message-body">
+                      Match the pairs to train your memory!
+                    </p>
+                    <div class="memory-game">
+                      <div class="memory-grid" id="memory-grid">
+                        <!-- Cards will be generated by JavaScript -->
+                      </div>
+                      <div class="memory-stats">
+                        <p>Moves: <span id="move-count">0</span></p>
+                        <p>Pairs found: <span id="pairs-found">0</span>/6</p>
+                      </div>
+                      <button
+                        class="button is-info is-fullwidth mt-3"
+                        id="reset-memory"
+                      >
+                        <span class="icon"><i class="fas fa-redo"></i></span>
+                        <span>New Game</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column is-half">
+                  <div class="box tip-card">
+                    <h2 class="subtitle">Breathing Exercise 🌬️</h2>
+                    <p class="message-body">
+                      Follow the circle to practice calm breathing!
+                    </p>
+                    <div class="breathing-exercise">
+                      <div class="breathing-circle" id="breathing-circle">
+                        <span>Breathe In</span>
+                      </div>
+                      <div class="breathing-instructions">
+                        <p>
+                          Breathe in as the circle expands, breathe out as it
+                          contracts
+                        </p>
+                      </div>
+                      <button
+                        class="button is-info is-fullwidth mt-3"
+                        id="start-breathing"
+                      >
+                        <span class="icon"><i class="fas fa-play"></i></span>
+                        <span>Start Breathing Exercise</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column is-full">
+                  <div class="box tip-card">
+                    <h2 class="subtitle">Would You Rather? 🤔</h2>
+                    <p class="message-body">Fun questions to make you think!</p>
+                    <div class="question-game">
+                      <div class="question" id="wyr-question">
+                        Would you rather be able to fly or be invisible?
+                      </div>
+                      <div class="buttons are-medium is-centered mt-4">
+                        <button class="button is-primary option-a">
+                          Option A
+                        </button>
+                        <button class="button is-info option-b">
+                          Option B
+                        </button>
+                      </div>
+                      <button
+                        class="button is-info is-fullwidth mt-3"
+                        id="next-question"
+                      >
+                        <span class="icon"><i class="fas fa-forward"></i></span>
+                        <span>Next Question</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-</section>
-  
-    
+      </div>
+    </div>
+
+    <footer class="playful-footer">
+      <div class="footer-background">
+        <div class="footer-bubbles" id="footerBubbles"></div>
+        <div class="footer-rainbow"></div>
+      </div>
+
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="index.html">
+            <img
+              src="images/logo.png"
+              alt="Logo"
+              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUwIiBoZWlnaHQ9IjUwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0ZXh0IHg9IjE1IiB5PSIzMCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmaWxsPSIjMzMzIj5Mb2dvPC90ZXh0Pjwvc3ZnPg=='"
+            />
+            <span class="logo-sparkle-footer"></span>
+          </a>
+        </div>
+
+        <div class="footer-links">
+          <a href="index.html" class="footer-link">
+            <span class="link-icon">🏠</span>
+            <span class="link-text">Home</span>
+          </a>
+          <a href="insights.html" class="footer-link">
+            <span class="link-icon">💡</span>
+            <span class="link-text">Insights</span>
+          </a>
+          <a href="activities.html" class="footer-link">
+            <span class="link-icon">🎯</span>
+            <span class="link-text">Activities</span>
+          </a>
+          <a href="quotes.html" class="footer-link">
+            <span class="link-icon">🗣️</span>
+            <span class="link-text">Quotes</span>
+          </a>
+          <a href="tips.html" class="footer-link">
+            <span class="link-icon">💎</span>
+            <span class="link-text">Tips</span>
+          </a>
+        </div>
+
+        <div class="footer-info">
+          <p class="footer-team">
+            <strong>Team Captivators</strong>
+            <br />
+            <a href="http://www.avcoe.org/">
+              Amrutvahini College of Engineering
+            </a>
+            <br />
+            Sangamner, Maharashtra
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script/navbar.js"></script>
+
+    <script type="text/javascript" src="script/tips.js"></script>
+  </body>
+</html>
