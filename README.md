@@ -94,6 +94,7 @@ Team Captivators from Amrutvahini College of Engineering, Sangamner, Maharashtra
   
 ## Deployment
 
--https://happinesstest.netlify.app
--https://happinesstest.vercel.app
+- https://happinesstest.netlify.app
+- https://happinesstest.vercel.app
+- https://masterpiece-1802.github.io/Happitude/
 
