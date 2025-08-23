@@ -91,3 +91,9 @@ Team Captivators from Amrutvahini College of Engineering, Sangamner, Maharashtra
 - Integration with school management systems
 - Mobile application version
 - Advanced data visualization for insights
+  
+## Deployment
+
+-https://happinesstest.netlify.app
+-https://happinesstest.vercel.app
+
